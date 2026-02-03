@@ -6,7 +6,8 @@
   <meta name="description" content="Extremal Froude number Fr ≈ 0.3094 derived analytically for open-channel flow energy extraction.">
 </head>
 <body>
-
+This page is the online reference for the result published on Zenodo:
+DOI: 10.5281/zenodo.18321384
 <h1>Extremal Froude Number Fr ≈ 0.3094</h1>
 
 <p>
