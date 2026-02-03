@@ -1,15 +1,15 @@
-      <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
 
-    <title>Extremal Froude Number Fr ≈ 0.3094</title>
+    <title>Universal Energy Extraction Limit in Open-Channel Flow</title>
 
     <meta name="description"
-          content="Derivation of the extremal Froude number Fr ≈ 0.3094 obtained from energy optimization in open-channel flow without losses. This page represents the primary public reference for the result.">
+          content="Universal energy extraction limit in ideal open-channel flow. A subcritical extremum at Fr ≈ 0.3094 defines a fundamental energy limit analogous to the Betz limit (34.52%) for wind turbines.">
 
     <meta name="keywords"
-          content="Froude number, extremal Froude number, Fr 0.3094, open channel flow, energy extraction limit, hydrokinetic energy">
+          content="Froude number, Fr 0.3094, energy extraction limit, Betz limit analogy, open channel flow, hydrokinetic energy, free surface flow">
 
     <meta name="author" content="G. V. Treshchalov">
 
@@ -20,38 +20,118 @@
 
 <body>
 
-<h1>Extremal Froude Number Fr ≈ 0.3094</h1>
+<h1>Universal Energy Extraction Limit in Open-Channel Flow</h1>
 
 <p>
-This page presents the derivation and statement of the <strong>extremal Froude number</strong>
-</p>
-
-<p style="font-size: 1.3em; font-weight: bold;">
-Fr ≈ 0.3094
-</p>
-
-<p>
-The value arises from energy optimization in ideal open-channel flow without friction or losses.
-It represents a fundamental limit analogous in role to the Betz limit for wind turbines,
-but applicable to free-surface flows.
+This page presents a <strong>universal energetic limit</strong> for ideal free-surface flows,
+derived analytically from first principles.
 </p>
 
 <hr>
 
-<h2>Key Result</h2>
+<h2>Core Result</h2>
 
 <p>
-For an ideal incompressible fluid in open-channel flow, the extractable energy reaches a limit
-at the extremal Froude number:
+The extractable energy of an ideal incompressible open-channel flow exhibits a
+<strong>subcritical extremum</strong> at the universal Froude number:
+</p>
+
+<p style="font-size: 1.4em; font-weight: bold;">
+Fr<sub>ext</sub> ≈ 0.3094
+</p>
+
+<p>
+This extremum represents a fundamental energy limit that does not depend on friction,
+channel roughness, or empirical resistance laws (Manning, Chezy, etc.).
+</p>
+
+<hr>
+
+<h2>Energy Limit (Betz-Type Analogy)</h2>
+
+<p>
+In wind energy theory, the <strong>Betz limit</strong> establishes a universal upper bound on
+extractable kinetic energy:
 </p>
 
 <p style="font-size: 1.2em;">
-<strong>Fr<sub>ext</sub> ≈ 0.3094</strong>
+<strong>η<sub>Betz</sub> = 16/27 ≈ 59.3%</strong>
 </p>
 
 <p>
-This value is obtained analytically from the energy balance and does not depend on empirical
-resistance laws (e.g., Manning or Chezy).
+For open-channel free-surface flow, an analogous universal constraint arises from
+energy balance and flow continuity.
+</p>
+
+<p style="font-size: 1.2em; font-weight: bold;">
+Maximum extractable energy fraction:
+</p>
+
+<p style="font-size: 1.3em;">
+<strong>η<sub>OCF</sub> ≈ 34.52%</strong>
+</p>
+
+<p>
+This value emerges naturally from the dimensionless energy function
+Φ(Fr) and is attained precisely at:
+</p>
+
+<p style="font-size: 1.2em;">
+<strong>Fr ≈ 0.3094</strong>
+</p>
+
+<p>
+Thus, <strong>Fr ≈ 0.3094 plays the same theoretical role for open-channel flow
+as the Betz limit does for wind turbines</strong>.
+</p>
+
+<hr>
+
+<h2>Energy Hump and Subcritical Extremum</h2>
+
+<p>
+The figure below illustrates the dimensionless extractable energy Φ(Fr)
+as a function of the Froude number.
+</p>
+
+<p>
+A pronounced <strong>energy hump</strong> appears in the subcritical regime,
+with a universal maximum at Fr ≈ 0.3094 and a degeneration of the hydrostatic
+energy mechanism as Fr → 1.
+</p>
+
+<div style="text-align: center;">
+    <img src="energy_hump.png"
+         alt="Energy hump and universal subcritical extremum at Fr ≈ 0.3094"
+         style="max-width: 90%; height: auto; border: 1px solid #ccc;">
+</div>
+
+<p style="text-align: center; font-style: italic;">
+Energy hump and universal subcritical extremum of dimensionless energy Φ(Fr).
+</p>
+
+<hr>
+
+<h2>Physical Interpretation</h2>
+
+<ul>
+    <li>The extremum occurs strictly in the <strong>subcritical regime (Fr &lt; 1)</strong>.</li>
+    <li>At Fr → 1, hydrostatic pressure support degenerates and extractable energy vanishes.</li>
+    <li>The limit is geometric and energetic in nature, not technological.</li>
+    <li>No turbulence modeling or dissipation assumptions are involved.</li>
+</ul>
+
+<hr>
+
+<h2>Primary Reference</h2>
+
+<p>
+Treshchalov, G. V. (2026).<br>
+<strong>A Universal Energy Extraction Limit in Open-Channel Flow</strong>.<br>
+Zenodo. DOI:<br>
+<a href="https://doi.org/10.5281/zenodo.18321384">
+https://doi.org/10.5281/zenodo.18321384
+</a>
 </p>
 
 <hr>
@@ -59,8 +139,12 @@ resistance laws (e.g., Manning or Chezy).
 <h2>Citation</h2>
 
 <p>
+If you refer to this result, please cite:
+</p>
+
+<p>
 Treshchalov, G. V. (2026).<br>
-<strong>Extremal Froude Number Fr ≈ 0.3094</strong>.<br>
+<strong>Universal Energy Extraction Limit in Open-Channel Flow (Fr ≈ 0.3094)</strong>.<br>
 Available at:<br>
 <a href="https://althydroenergy.github.io/ERGroup/">
 https://althydroenergy.github.io/ERGroup/
@@ -69,26 +153,16 @@ https://althydroenergy.github.io/ERGroup/
 
 <hr>
 
-<h2>Related Publication</h2>
-
-<p>
-A detailed derivation is available in the associated Zenodo preprint:
-</p>
-
-<p>
-<a href="https://doi.org/10.5281/zenodo.18321384">
-https://doi.org/10.5281/zenodo.18321384
-</a>
-</p>
-
-<hr>
-
 <h2>Notes</h2>
 
 <ul>
-    <li>This page serves as the primary online reference for Fr ≈ 0.3094.</li>
-    <li>The result was derived independently and analytically.</li>
-    <li>The analysis assumes ideal flow without friction or dissipative losses.</li>
+    <li>This page serves as the primary public reference for Fr ≈ 0.3094.</li>
+    <li>The limit is exact within the framework of ideal fluid mechanics.</li>
+    <li>The result is conceptually analogous to the Betz limit but applies to free-surface flows.</li>
+</ul>
+
+</body>
+</html>ut friction or dissipative losses.</li>
 </ul>
 
 </body>
