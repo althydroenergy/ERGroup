@@ -1,39 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Extremal Froude Number Fr ≈ 0.3094</title>
-  <meta name="description" content="Extremal Froude number Fr ≈ 0.3094 derived analytically for open-channel flow energy extraction.">
-</head>
-<body>
-This page is the online reference for the result published on Zenodo:
-DOI: 10.5281/zenodo.18321384
-<h1>Extremal Froude Number Fr ≈ 0.3094</h1>
+ # Universal Energy Extraction Limit in Open-Channel Flow
 
-<p>
-The <b>extremal Froude number</b> <b>Fr ≈ 0.3094</b> was derived analytically
-from an energy balance for an ideal, inviscid open-channel flow with energy extraction.
-</p>
+This repository hosts the official public webpage and supporting materials
+for the analytical result identifying a universal energy extraction limit
+in ideal open-channel flow.
 
-<p>
-This value lies well within the subcritical regime and is fundamentally different
-from the classical critical condition <b>Fr = 1</b>.
-</p>
+## Key Result
 
-<p>
-Primary reference:<br>
-G. V. Treshchalov,<br>
-<i>A Universal Energy Extraction Limit in Open-Channel Flow</i>,<br>
-Zenodo, 2026.<br>
-DOI:
-<a href="https://doi.org/10.5281/zenodo.18321384">
-10.5281/zenodo.18321384
-</a>
-</p>
+A universal subcritical extremum of extractable energy occurs at the
+Froude number:
 
-<p>
-Independent researcher.
-</p>
+**Fr ≈ 0.3094**
 
-</body>
-</html>
+At this value, the maximum extractable energy fraction reaches:
+
+**η ≈ 34.52%**
+
+This limit is derived analytically from energy balance considerations and
+is independent of empirical resistance laws or friction models.
+
+The result is conceptually analogous to the Betz limit in wind energy,
+but applies to free-surface open-channel flows.
+
+## Online Reference
+
+The primary public reference is available at:
+
+https://althydroenergy.github.io/ERGroup/
+
+## Publication
+
+Treshchalov, G. V. (2026).  
+**A Universal Energy Extraction Limit in Open-Channel Flow**.  
+Zenodo. DOI: https://doi.org/10.5281/zenodo.18321384
+
+## Contents
+
+- `index.html` — main webpage
+- `energy_hump.jpg` — dimensionless energy diagram
+- `backup/` — archived versions of the webpage
+- `README.md` — project description
+
+## Notes
+
+- The analysis assumes ideal incompressible flow without friction.
+- The extremum occurs strictly in the subcritical regime (Fr < 1).
+- The repository serves as a stable, citable reference.
+
+## License
+
+Content © 2026 G. V. Treshchalov.  
+All rights reserved.
