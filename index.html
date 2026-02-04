@@ -6,7 +6,7 @@
     <title>Universal Energy Extraction Limit in Open-Channel Flow</title>
 
     <meta name="description"
-          content="Universal energy extraction limit in ideal open-channel flow. A subcritical extremum at Fr ≈ 0.3094 defines a fundamental energy limit analogous to the Betz limit (34.52%) for wind turbines.">
+          content="Universal energy extraction limit in open-channel flow: extremal Froude number Fr ≈ 0.3094 and maximum energy fraction η ≈ 34.52%, analogous to the Betz limit.">
 
     <meta name="keywords"
           content="Froude number, Fr 0.3094, energy extraction limit, Betz limit analogy, open channel flow, hydrokinetic energy, free surface flow">
@@ -16,25 +16,35 @@
     <link rel="canonical" href="https://althydroenergy.github.io/ERGroup/" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
+    <!-- Open Graph for social sharing -->
+    <meta property="og:title" content="Universal Energy Extraction Limit in Open-Channel Flow">
+    <meta property="og:description" content="Extremal Froude number Fr ≈ 0.3094 defines a universal energy limit (η ≈ 34.52%), analogous to the Betz limit.">
+    <meta property="og:image" content="https://althydroenergy.github.io/ERGroup/energy_hump.jpg">
+    <meta property="og:url" content="https://althydroenergy.github.io/ERGroup/">
+    <meta property="og:type" content="article">
+
     <!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3CZ80EB502"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-3CZ80EB502');
-</script>
-    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3CZ80EB502"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-3CZ80EB502');
+    </script>
+
 </head>
 
 <body>
 
 <h1>Universal Energy Extraction Limit in Open-Channel Flow</h1>
 
-<p>
-This page presents a <strong>universal energetic limit</strong> for ideal free-surface flows,
-derived analytically from first principles.
+<p><strong>Abstract.</strong>
+A universal energy extraction limit for ideal open-channel flow is derived analytically.
+The extractable energy exhibits a subcritical maximum at the extremal Froude number
+Fr ≈ 0.3094, corresponding to a maximum energy fraction η ≈ 34.52%.
+The result is independent of friction laws and plays a role analogous to the Betz limit
+for wind turbines.
 </p>
 
 <hr>
@@ -51,8 +61,21 @@ Fr<sub>ext</sub> ≈ 0.3094
 </p>
 
 <p>
-This extremum represents a fundamental energy limit that does not depend on friction,
+This extremum represents a fundamental energetic limit that does not depend on friction,
 channel roughness, or empirical resistance laws (Manning, Chezy, etc.).
+</p>
+
+<hr>
+
+<h2>Dimensionless Energy Function</h2>
+
+<p>
+The extractable energy is described by a dimensionless function Φ(Fr).
+Its maximum defines the universal limit for open-channel flow:
+</p>
+
+<p style="font-size: 1.2em; font-weight: bold;">
+Φ<sub>max</sub> = Φ(Fr ≈ 0.3094) ≈ 0.3452
 </p>
 
 <hr>
@@ -70,24 +93,11 @@ extractable kinetic energy:
 
 <p>
 For open-channel free-surface flow, an analogous universal constraint arises from
-energy balance and flow continuity.
+energy balance and flow continuity:
 </p>
 
-<p style="font-size: 1.2em; font-weight: bold;">
-Maximum extractable energy fraction:
-</p>
-
-<p style="font-size: 1.3em;">
-<strong>η<sub>OCF</sub> ≈ 34.52%</strong>
-</p>
-
-<p>
-This value emerges naturally from the dimensionless energy function
-Φ(Fr) and is attained precisely at:
-</p>
-
-<p style="font-size: 1.2em;">
-<strong>Fr ≈ 0.3094</strong>
+<p style="font-size: 1.3em; font-weight: bold;">
+η<sub>OCF</sub> ≈ 34.52% &nbsp; at &nbsp; Fr ≈ 0.3094
 </p>
 
 <p>
@@ -97,38 +107,69 @@ as the Betz limit does for wind turbines</strong>.
 
 <hr>
 
+<h2>Analogy with the Betz Limit</h2>
+
+<table border="1" cellpadding="6" cellspacing="0">
+<tr>
+<th>System</th>
+<th>Control parameter</th>
+<th>Maximum efficiency</th>
+<th>Nature of limit</th>
+</tr>
+<tr>
+<td>Wind turbine</td>
+<td>Axial induction factor</td>
+<td>η = 16/27 ≈ 59.3%</td>
+<td>Momentum & energy balance</td>
+</tr>
+<tr>
+<td>Open-channel flow</td>
+<td>Froude number</td>
+<td>η ≈ 34.52%</td>
+<td>Free-surface energy balance</td>
+</tr>
+</table>
+
+<hr>
+
 <h2>Energy Hump and Subcritical Extremum</h2>
 
 <p>
 The figure below illustrates the dimensionless extractable energy Φ(Fr)
 as a function of the Froude number.
-</p>
-
-<p>
 A pronounced <strong>energy hump</strong> appears in the subcritical regime,
-with a universal maximum at Fr ≈ 0.3094 and a degeneration of the hydrostatic
-energy mechanism as Fr → 1.
+with a universal maximum at Fr ≈ 0.3094.
 </p>
 
-<div style="text-align: center;">
+<figure style="text-align: center;">
     <img src="energy_hump.jpg"
          alt="Energy hump and universal subcritical extremum at Fr ≈ 0.3094"
-         style="max-width: 90%; height: auto; border: 1px solid #ccc;">
-</div>
-
-<p style="text-align: center; font-style: italic;">
-Energy hump and universal subcritical extremum of dimensionless energy Φ(Fr).
-</p>
+         style="max-width: 90%; height: auto; border: 1px solid #ccc;"
+         loading="lazy">
+    <figcaption style="font-style: italic;">
+        Dimensionless energy Φ(Fr) showing a universal subcritical maximum at Fr ≈ 0.3094.
+    </figcaption>
+</figure>
 
 <hr>
 
-<h2>Physical Interpretation</h2>
+<h2>Domain of Validity</h2>
 
 <ul>
-    <li>The extremum occurs strictly in the <strong>subcritical regime (Fr &lt; 1)</strong>.</li>
-    <li>At Fr → 1, hydrostatic pressure support degenerates and extractable energy vanishes.</li>
-    <li>The limit is geometric and energetic in nature, not technological.</li>
-    <li>No turbulence modeling or dissipation assumptions are involved.</li>
+    <li>Incompressible fluid</li>
+    <li>Free-surface (open-channel) flow</li>
+    <li>Ideal flow without friction or dissipative losses</li>
+    <li>Subcritical regime (Fr &lt; 1)</li>
+</ul>
+
+<hr>
+
+<h2>Why This Result Matters</h2>
+
+<ul>
+    <li>Provides a theoretical upper bound for free-flow hydrokinetic devices</li>
+    <li>Separates geometric energy limits from technological efficiency</li>
+    <li>Clarifies the fundamental role of the Froude number in energy extraction</li>
 </ul>
 
 <hr>
@@ -159,6 +200,14 @@ Available at:<br>
 <a href="https://althydroenergy.github.io/ERGroup/">
 https://althydroenergy.github.io/ERGroup/
 </a>
+</p>
+
+<hr>
+
+<h2>Discussion</h2>
+
+<p>
+Comments, questions, and independent checks are welcome.
 </p>
 
 <hr>
