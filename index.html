@@ -1,240 +1,127 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>Universal Energy Extraction Limit in Open-Channel Flow (Fr ≈ 0.3094)</title>
 
-    <title>Universal Energy Extraction Limit in Open-Channel Flow</title>
+    <meta name="description" content="Universal energy extraction limit in open-channel flow at Froude number 0.3094.">
+    <meta name="keywords" content="open-channel flow, Froude number, hydropower, hydrokinetic energy, Betz limit">
+    <meta name="author" content="German V. Treshchalov">
 
-    <meta name="description"
-          content="Universal energy extraction limit in open-channel flow: extremal Froude number Fr ≈ 0.3094 and maximum energy fraction η ≈ 34.52%, analogous to the Betz limit.">
-
-    <meta name="keywords"
-          content="Froude number, Fr 0.3094, energy extraction limit, Betz limit analogy, open channel flow, hydrokinetic energy, free surface flow">
-
-    <meta name="author" content="G. V. Treshchalov">
-
-    <link rel="canonical" href="https://althydroenergy.github.io/ERGroup/" />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Open Graph for social sharing -->
-    <meta property="og:title" content="Universal Energy Extraction Limit in Open-Channel Flow">
-    <meta property="og:description" content="Extremal Froude number Fr ≈ 0.3094 defines a universal energy limit (η ≈ 34.52%), analogous to the Betz limit.">
-    <meta property="og:image" content="https://althydroenergy.github.io/ERGroup/energy_hump.jpg">
-    <meta property="og:url" content="https://althydroenergy.github.io/ERGroup/">
-    <meta property="og:type" content="article">
-
-    <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3CZ80EB502"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-3CZ80EB502');
-    </script>
-
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            line-height: 1.6;
+            padding: 0 20px;
+        }
+        h1, h2 {
+            color: #003366;
+        }
+        .box {
+            background: #f4f7fb;
+            padding: 15px;
+            border-left: 4px solid #003366;
+            margin: 20px 0;
+        }
+        .links a {
+            display: block;
+            margin: 6px 0;
+            font-size: 17px;
+        }
+        .footer {
+            margin-top: 40px;
+            font-size: 14px;
+            color: #555;
+            border-top: 1px solid #ccc;
+            padding-top: 15px;
+        }
+    </style>
 </head>
 
 <body>
 
 <h1>Universal Energy Extraction Limit in Open-Channel Flow</h1>
 
-<p><strong>Abstract.</strong>
-A universal energy extraction limit for ideal open-channel flow is derived analytically.
-The extractable energy exhibits a subcritical maximum at the extremal Froude number
-Fr ≈ 0.3094, corresponding to a maximum energy fraction η ≈ 34.52%.
-The result is independent of friction laws and plays a role analogous to the Betz limit
-for wind turbines.
-</p>
+<div class="box">
+<strong>Main result:</strong><br>
+Maximum theoretical efficiency in free-surface flow occurs at<br>
+<strong>Froude number Fr ≈ 0.3094</strong><br>
+with an energy extraction limit of<br>
+<strong>η ≈ 34.52%</strong>.
+</div>
 
-<hr>
-
-<h2>Core Result</h2>
-
+<h2>Background</h2>
 <p>
-The extractable energy of an ideal incompressible open-channel flow exhibits a
-<strong>subcritical extremum</strong> at the universal Froude number:
-</p>
-
-<p style="font-size: 1.4em; font-weight: bold;">
-Fr<sub>ext</sub> ≈ 0.3094
+During the development of a free-flow micro-hydropower concept,
+a fundamental question arose:
+<strong>how much energy can actually be extracted from an open-channel flow?</strong>
 </p>
 
 <p>
-This extremum represents a fundamental energetic limit that does not depend on friction,
-channel roughness, or empirical resistance laws (Manning, Chezy, etc.).
+In wind energy, the well-known Betz limit defines the theoretical
+maximum amount of energy that can be extracted from the wind.
+However, for free-surface hydraulic flows without dams,
+such a universal limit had not been clearly formulated.
 </p>
 
-<hr>
-
-<h2>Dimensionless Energy Function</h2>
-
+<h2>Main idea</h2>
 <p>
-The extractable energy is described by a dimensionless function Φ(Fr).
-Its maximum defines the universal limit for open-channel flow:
-</p>
-
-<p style="font-size: 1.2em; font-weight: bold;">
-Φ<sub>max</sub> = Φ(Fr ≈ 0.3094) ≈ 0.3452
-</p>
-
-<hr>
-
-<h2>Energy Limit (Betz-Type Analogy)</h2>
-
-<p>
-In wind energy theory, the <strong>Betz limit</strong> establishes a universal upper bound on
-extractable kinetic energy:
-</p>
-
-<p style="font-size: 1.2em;">
-<strong>η<sub>Betz</sub> = 16/27 ≈ 59.3%</strong>
+This work analyzes the energy balance of open-channel flow
+with energy extraction. By minimizing the specific energy
+of the downstream section, an optimal regime is obtained.
 </p>
 
 <p>
-For open-channel free-surface flow, an analogous universal constraint arises from
-energy balance and flow continuity:
+The analysis leads to a universal optimum at:
 </p>
-
-<p style="font-size: 1.3em; font-weight: bold;">
-η<sub>OCF</sub> ≈ 34.52% &nbsp; at &nbsp; Fr ≈ 0.3094
-</p>
-
-<p>
-Thus, <strong>Fr ≈ 0.3094 plays the same theoretical role for open-channel flow
-as the Betz limit does for wind turbines</strong>.
-</p>
-
-<hr>
-
-<h2>Analogy with the Betz Limit</h2>
-
-<table border="1" cellpadding="6" cellspacing="0">
-<tr>
-<th>System</th>
-<th>Control parameter</th>
-<th>Maximum efficiency</th>
-<th>Nature of limit</th>
-</tr>
-<tr>
-<td>Wind turbine</td>
-<td>Axial induction factor</td>
-<td>η = 16/27 ≈ 59.3%</td>
-<td>Momentum & energy balance</td>
-</tr>
-<tr>
-<td>Open-channel flow</td>
-<td>Froude number</td>
-<td>η ≈ 34.52%</td>
-<td>Free-surface energy balance</td>
-</tr>
-</table>
-
-<hr>
-
-<h2>Energy Hump and Subcritical Extremum</h2>
-
-<p>
-The figure below illustrates the dimensionless extractable energy Φ(Fr)
-as a function of the Froude number.
-A pronounced <strong>energy hump</strong> appears in the subcritical regime,
-with a universal maximum at Fr ≈ 0.3094.
-</p>
-
-<figure style="text-align: center;">
-    <img src="energy_hump.jpg"
-         alt="Energy hump and universal subcritical extremum at Fr ≈ 0.3094"
-         style="max-width: 90%; height: auto; border: 1px solid #ccc;"
-         loading="lazy">
-    <figcaption style="font-style: italic;">
-        Dimensionless energy Φ(Fr) showing a universal subcritical maximum at Fr ≈ 0.3094.
-    </figcaption>
-</figure>
-
-<hr>
-
-<h2>Domain of Validity</h2>
 
 <ul>
-    <li>Incompressible fluid</li>
-    <li>Free-surface (open-channel) flow</li>
-    <li>Ideal flow without friction or dissipative losses</li>
-    <li>Subcritical regime (Fr &lt; 1)</li>
+<li><strong>Froude number: Fr ≈ 0.3094</strong></li>
+<li><strong>Maximum extraction efficiency: η ≈ 34.52%</strong></li>
 </ul>
-
-<hr>
-
-<h2>Why This Result Matters</h2>
-
-<ul>
-    <li>Provides a theoretical upper bound for free-flow hydrokinetic devices</li>
-    <li>Separates geometric energy limits from technological efficiency</li>
-    <li>Clarifies the fundamental role of the Froude number in energy extraction</li>
-</ul>
-
-<hr>
-
-<h2>Primary Reference</h2>
 
 <p>
-Treshchalov, G. V. (2026).<br>
-<strong>A Universal Energy Extraction Limit in Open-Channel Flow</strong>.<br>
-Zenodo. DOI:<br>
+This result plays a role analogous to the Betz limit
+in wind energy, but for open-channel hydrodynamic systems.
+</p>
+
+<h2>Independent validation</h2>
+<p>
+The result was independently checked by
+Prof. Luca Cacialli, who re-derived the equation
+and confirmed its correctness in the subcritical regime.
+</p>
+
+<h2>Full papers</h2>
+<div class="links">
 <a href="https://doi.org/10.5281/zenodo.18321384">
-https://doi.org/10.5281/zenodo.18321384
+Zenodo (DOI): Universal Energy Extraction Limit in Open-Channel Flow
 </a>
-</p>
-<hr>
 
-<h2>Additional Publication</h2>
-
-<p>
-This work is also available as a preprint in the SSRN eLibrary:
-</p>
-
-<p>
-Treshchalov, G. V. (2026).<br>
-<strong>A Universal Energy Extraction Limit in Open-Channel Flow</strong>.<br>
-SSRN Electronic Journal.<br>
-DOI:
-<a href="https://dx.doi.org/10.2139/ssrn.6167368" target="_blank">
-https://doi.org/10.2139/ssrn.6167368
+<a href="https://papers.ssrn.com/">
+SSRN version (preprint)
 </a>
-</p>
-<hr>
+</div>
 
-<h2>Citation</h2>
-
+<h2>Diagram</h2>
 <p>
-If you refer to this result, please cite:
+<img src="energy_hump.jpg" alt="Energy extraction diagram" style="max-width:100%;">
 </p>
 
+<h2>Keywords</h2>
 <p>
-Treshchalov, G. V. (2026).<br>
-<strong>Universal Energy Extraction Limit in Open-Channel Flow (Fr ≈ 0.3094)</strong>.<br>
-Available at:<br>
-<a href="https://althydroenergy.github.io/ERGroup/">
-https://althydroenergy.github.io/ERGroup/
-</a>
+open-channel flow, Froude number, hydropower, hydrokinetic energy,
+free-flow turbines, energy extraction limit
 </p>
 
-<hr>
-
-<h2>Discussion</h2>
-
-<p>
-Comments, questions, and independent checks are welcome.
-</p>
-
-<hr>
-
-<h2>Notes</h2>
-
-<ul>
-    <li>This page serves as the primary public reference for Fr ≈ 0.3094.</li>
-    <li>The limit is exact within the framework of ideal fluid mechanics.</li>
-    <li>The result is conceptually analogous to the Betz limit but applies to free-surface flows.</li>
-</ul>
+<div class="footer">
+<strong>Author:</strong><br>
+German V. Treshchalov<br>
+Independent researcher<br>
+Email: your_email_here
+</div>
 
 </body>
-</html>
+    </html>
