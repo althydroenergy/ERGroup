@@ -3,11 +3,9 @@
 <head>
 
 <meta charset="UTF-8">
-<title>ERGroup Hydropower FAQ</title>
+<title>ERGroup Hydropower – FAQ</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<meta name="description" content="Frequently asked questions about ERGroup innovative free-flow micro hydropower technology.">
 
 <style>
 
@@ -31,114 +29,42 @@ padding:15px 0;
 
 .question{
 font-weight:bold;
-font-size:18px;
 cursor:pointer;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-.arrow{
-transition: transform 0.3s;
+font-size:18px;
 }
 
 .answer{
-max-height:0;
-overflow:hidden;
-transition:max-height 0.4s ease;
+display:none;
+margin-top:10px;
 color:#444;
-margin-top:5px;
 }
 
-.faq-item.active .answer{
-max-height:500px;
-margin-top:10px;
-}
-
-.faq-item.active .arrow{
-transform:rotate(90deg);
-}
-
-.update{
-font-size:12px;
-color:#777;
-margin-top:10px;
+a{
+color:#1a5fb4;
 }
 
 .back{
 margin-top:40px;
 display:inline-block;
+font-size:16px;
 }
 
 </style>
 
 <script>
 
-function toggleFAQ(element){
+function toggleAnswer(id){
+var x=document.getElementById(id);
 
-let item = element.parentElement
-
-item.classList.toggle("active")
+if(x.style.display==="block"){
+x.style.display="none";
+}
+else{
+x.style.display="block";
+}
 
 }
 
-</script>
-
-<!-- SEO FAQ schema -->
-
-<script type="application/ld+json">
-{
-"@context":"https://schema.org",
-"@type":"FAQPage",
-"mainEntity":[
-
-{
-"@type":"Question",
-"name":"Why is your unit more favorable than solar panels?",
-"acceptedAnswer":{
-"@type":"Answer",
-"text":"Our water turbine operates 24/7 and does not depend on weather conditions, sunlight, or season."
-}
-},
-
-{
-"@type":"Question",
-"name":"Is it environmentally friendlier than solar panels?",
-"acceptedAnswer":{
-"@type":"Answer",
-"text":"Hydropower turbines do not require consumable components such as solar panels or batteries that degrade and must be replaced."
-}
-},
-
-{
-"@type":"Question",
-"name":"What is the power capacity of your turbine?",
-"acceptedAnswer":{
-"@type":"Answer",
-"text":"The smallest unit has a capacity of about 3 kW and can generate more than 70 kWh per day."
-}
-},
-
-{
-"@type":"Question",
-"name":"Can one turbine power a farm or village?",
-"acceptedAnswer":{
-"@type":"Answer",
-"text":"Larger installations can reach 200–300 kW and may supply farms, villages or settlements."
-}
-},
-
-{
-"@type":"Question",
-"name":"Will the turbine harm fish?",
-"acceptedAnswer":{
-"@type":"Answer",
-"text":"The turbine rotates slowly (20–30 rpm) and does not block the entire channel, making it safe for aquatic life."
-}
-}
-
-]
-}
 </script>
 
 </head>
@@ -147,65 +73,148 @@ item.classList.toggle("active")
 
 <h1>Frequently Asked Questions</h1>
 
-<div class="faq-item" id="solar">
-<div class="question" onclick="toggleFAQ(this)">
+<div class="faq-item">
+<div class="question" onclick="toggleAnswer('a1')">
 Why is your unit more favorable than solar panels?
-<span class="arrow">▶</span>
 </div>
-<div class="answer">
-Our water turbine is even cleaner and cheaper than solar energy because it does not depend on weather conditions, time of day, or season and can operate 24/7 at full capacity.
-<div class="update">Last update: 09.03.2024</div>
+<div class="answer" id="a1">
+Our water turbine is even cleaner and cheaper than solar energy as it does not depend on weather conditions, the time of the day or season and can operate 24/7 at full capacity.
 </div>
 </div>
 
-
-<div class="faq-item" id="environment">
-<div class="question" onclick="toggleFAQ(this)">
+<div class="faq-item">
+<div class="question" onclick="toggleAnswer('a2')">
 Is it environmentally friendlier than solar panels?
-<span class="arrow">▶</span>
 </div>
-<div class="answer">
-Hydraulic turbines do not require consumable components such as batteries or solar panels that degrade over time. Their production and disposal therefore have a smaller environmental impact.
-<div class="update">Last update: 09.03.2024</div>
+<div class="answer" id="a2">
+Compared to solar power stations (SPS), hydraulic turbines also have additional environmental advantages, as they do not have "consumable" components, such as batteries and solar panels, which are the main equipment in SPSs. They have a limited service life due to degradation of these components over time. Their production and disposal is also less environmentally friendly.
 </div>
 </div>
 
-
-<div class="faq-item" id="power">
-<div class="question" onclick="toggleFAQ(this)">
+<div class="faq-item">
+<div class="question" onclick="toggleAnswer('a3')">
 What is the power capacity of your turbine?
-<span class="arrow">▶</span>
 </div>
-<div class="answer">
-The smallest turbine unit has a capacity of approximately 3 kW and can generate more than 70 kWh of electricity per day, enough to power two or three houses.
-<div class="update">Last update: 12.03.2024</div>
+<div class="answer" id="a3">
+The approximate power capacity of the smallest unit is 3 kW. This allows the generation of more than 70 kWh of electricity per day, which is enough to power two to three large houses. In this case only additional technical means are needed to compensate for peak loads.
 </div>
 </div>
 
-
-<div class="faq-item" id="village">
-<div class="question" onclick="toggleFAQ(this)">
-Can one turbine supply electricity to a farm or village?
-<span class="arrow">▶</span>
+<div class="faq-item">
+<div class="question" onclick="toggleAnswer('a4')">
+Can one such unit supply electricity to a farm or a whole village?
 </div>
-<div class="answer">
-Large units may reach 200–300 kW. Such installations could supply electricity to farms, villages, or small settlements.
-<div class="update">Last update: 09.03.2024</div>
+<div class="answer" id="a4">
+Larger hydropower units can have a capacity of up to 200–300 kW, which is enough to supply a farm, village or settlement. This is possible on channels with a depth of at least 2 meters and a width of 10 meters or more. Annual power generation can reach 1.5–2 GWh. It is also possible to install a cascade of several small modules connected to one power plant. Such units can be placed at a distance of at least 100 m from each other.
 </div>
 </div>
 
+<div class="faq-item">
+<div class="question" onclick="toggleAnswer('a5')">
+What makes your turbine different from existing similar ones?
+</div>
+<div class="answer" id="a5">
+Our turbine’s diagram may resemble a well-known waterwheel, which is inefficient at low flow velocities. Our turbine consists of two such wheels connected in a special design that allows them to be used much more efficiently in slow water flow.
 
-<div class="faq-item" id="fish">
-<div class="question" onclick="toggleFAQ(this)">
+For more details see the scientific publication:
+
+<br><br>
+
+<a href="https://erg.ucoz.org/ISJAEE-12-2010-eng.pdf">
+https://erg.ucoz.org/ISJAEE-12-2010-eng.pdf
+</a>
+</div>
+</div>
+
+<div class="faq-item">
+<div class="question" onclick="toggleAnswer('a6')">
+Will floating debris hamper the operation of the turbine?
+</div>
+<div class="answer" id="a6">
+A protective grid installed in front of the turbine will drive off branches, chunks, animal corpses and other major debris. Modern hydropower technology already offers well-developed protection methods. Fine debris will pass through the turbine without affecting operation.
+</div>
+</div>
+
+<div class="faq-item">
+<div class="question" onclick="toggleAnswer('a7')">
 Will the turbine harm fish?
-<span class="arrow">▶</span>
 </div>
-<div class="answer">
-The turbine rotates slowly (20–30 rpm) and does not block the full channel width. For fish it behaves like a natural obstacle and even helps aerate the water.
-<div class="update">Last update: 13.03.2024</div>
+<div class="answer" id="a7">
+Our turbine does not harm river fauna because it does not block the entire channel and rotates only about 20–30 times per minute, which is dozens of times slower than boat propellers or conventional hydro turbines. For fish it is similar to a natural obstacle such as a small island or waterfall. The turbine also aerates the water, which benefits aquatic ecosystems.
 </div>
 </div>
 
+<div class="faq-item">
+<div class="question" onclick="toggleAnswer('a8')">
+Would several turbines hinder each other if installed in one stream section?
+</div>
+<div class="answer" id="a8">
+It is possible to install a cascade of several modules connected to one power plant. They can be placed at distances of at least 100 meters and do not significantly influence each other.
+</div>
+</div>
+
+<div class="faq-item">
+<div class="question" onclick="toggleAnswer('a9')">
+How much electricity does it produce at a flow of 1 m/s, 2 m/s and higher?
+</div>
+<div class="answer" id="a9">
+Standard free-flow turbines are efficient only at water velocities above about 2 m/s. At a speed of 1 m/s their efficiency drops dramatically. Our turbine is designed to operate efficiently in slower water flows below 2 m/s.
+</div>
+</div>
+
+<div class="faq-item">
+<div class="question" onclick="toggleAnswer('a10')">
+Does it work in all weather conditions? What happens during floods?
+</div>
+<div class="answer" id="a10">
+The turbine floats in the water and its key components are waterproof. Rain does not affect operation. When the river level rises during floods, the turbine remains floating on the surface and continues to operate.
+</div>
+</div>
+
+<div class="faq-item">
+<div class="question" onclick="toggleAnswer('a11')">
+What is the possible market size of your machine?
+</div>
+<div class="answer" id="a11">
+Potential clients include farmers, businesses, private households and governments interested in developing renewable energy and improving electricity supply in remote settlements.
+</div>
+</div>
+
+<div class="faq-item">
+<div class="question" onclick="toggleAnswer('a12')">
+What is the cost of the turbine?
+</div>
+<div class="answer" id="a12">
+The estimated cost is about $2000–3000 per kW depending on configuration. Final cost will be determined after the pilot project and scaling of production. The expected payback period is about 2–3 years.
+</div>
+</div>
+
+<div class="faq-item">
+<div class="question" onclick="toggleAnswer('a13')">
+What are the turbine's disadvantages?
+</div>
+<div class="answer" id="a13">
+River or canal depth is critical for efficiency. Calculations show that turbines are less efficient in streams with depths below about 1 meter and flow velocities below 1.5 m/s. The optimal turbine height is around 2 meters to achieve the design capacity.
+</div>
+</div>
+
+<div class="faq-item">
+<div class="question" onclick="toggleAnswer('a14')">
+Where will the pilot project be implemented?
+</div>
+<div class="answer" id="a14">
+We are open to proposals from any country for implementing the pilot project. The site must satisfy the technical requirements described in the section “Other Ways You Can Help”. Visa support, accommodation and working conditions for the project team may also be required.
+</div>
+</div>
+
+<div class="faq-item">
+<div class="question" onclick="toggleAnswer('a15')">
+How will the funds raised during the campaign be used?
+</div>
+<div class="answer" id="a15">
+Funds will be used to implement a pilot project and to scale the production of energy modules. More details are provided in the section “How We'll Use the Money”.
+</div>
+</div>
 
 <a class="back" href="project.html">
 ← Back to project page
