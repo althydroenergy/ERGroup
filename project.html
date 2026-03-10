@@ -1,169 +1,28 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <title>ERGroup – Innovative Small Hydropower</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Free-flow hydropower turbine for slow rivers and canals. ERGroup renewable energy project.">
+<meta name="description" content="Innovative free‑flow hydropower turbine for slow rivers and canals. ERGroup renewable energy project.">
 
 <style>
-
-body{
-font-family:Arial,Helvetica,sans-serif;
-margin:0;
-background:#f5f7fa;
-color:#222;
-line-height:1.6;
-}
-
-header{
-background:#0b3d91;
-color:white;
-padding:50px 20px;
-text-align:center;
-}
-
-header h1{
-margin:0;
-font-size:42px;
-}
-
-.container{
-max-width:900px;
-margin:auto;
-padding:20px;
-}
-
-section{
-background:white;
-padding:40px;
-margin-top:25px;
-border-radius:10px;
-box-shadow:0 5px 18px rgba(0,0,0,0.08);
-}
-
-.section-title{
-font-size:28px;
-color:#1e5bd7;
-margin-top:40px;
-border-bottom:2px solid #e0e0e0;
-padding-bottom:6px;
-font-family:Georgia,serif;
-}
-
-/* Water animation */
-
-.flow-box{
-height:120px;
-border-radius:8px;
-background:linear-gradient(90deg,#4fa3ff,#1b6eea);
-overflow:hidden;
-position:relative;
-margin-top:25px;
-}
-
-.wave{
-position:absolute;
-width:200%;
-height:120px;
-background:rgba(255,255,255,0.25);
-border-radius:40%;
-animation:flow 6s linear infinite;
-}
-
-.wave:nth-child(2){
-top:20px;
-animation-duration:8s;
-opacity:0.5;
-}
-
-@keyframes flow{
-0%{transform:translateX(-50%);}
-100%{transform:translateX(0);}
-}
-
-/* calculator */
-
-.calculator{
-margin-top:25px;
-background:#f0f4ff;
-padding:25px;
-border-radius:8px;
-}
-
-input{
-width:100%;
-padding:10px;
-margin-top:10px;
-margin-bottom:15px;
-font-size:16px;
-}
-
-button{
-background:#e91e63;
-color:white;
-border:none;
-padding:12px 20px;
-border-radius:6px;
-cursor:pointer;
-font-size:16px;
-}
-
-button:hover{
-background:#c2185b;
-}
-
-.result{
-font-size:22px;
-margin-top:20px;
-font-weight:bold;
-}
-
-/* gallery */
-
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:15px;
-margin-top:30px;
-}
-
-.gallery img{
-width:100%;
-border-radius:6px;
-cursor:pointer;
-transition:transform .25s;
-}
-
-.gallery img:hover{
-transform:scale(1.05);
-}
-
-#lightbox{
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.9);
-align-items:center;
-justify-content:center;
-z-index:9999;
-}
-
-#lightbox img{
-max-width:90%;
-max-height:90%;
-}
-
-footer{
-text-align:center;
-padding:40px;
-color:#777;
-}
-
+body{font-family:Arial,Helvetica,sans-serif;margin:0;background:#f5f7fa;color:#222;line-height:1.6;}
+header{background:#0b3d91;color:white;padding:50px 20px;text-align:center;}
+header h1{margin:0;font-size:42px;}
+.container{max-width:900px;margin:auto;padding:20px;}
+section{background:white;padding:40px;margin-top:25px;border-radius:10px;box-shadow:0 5px 18px rgba(0,0,0,0.08);}
+.section-title{font-size:28px;color:#1e5bd7;margin-top:40px;border-bottom:2px solid #e0e0e0;padding-bottom:6px;font-family:Georgia,serif;}
+img{width:100%;border-radius:6px;margin:20px 0;}
+.image-block{text-align:center;margin:30px 0;}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px;margin:40px 0;}
+.gallery img{cursor:pointer;border-radius:6px;transition:transform .25s;}
+.gallery img:hover{transform:scale(1.05);}
+#lightbox{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.92);align-items:center;justify-content:center;z-index:9999;cursor:pointer;}
+#lightbox img{max-width:90%;max-height:90%;border-radius:6px;}
+.button{display:inline-block;margin-top:25px;background:#e91e63;color:white;padding:12px 22px;border-radius:6px;text-decoration:none;font-weight:bold;}
+.button:hover{background:#c2185b;}
+footer{text-align:center;padding:40px;color:#777;}
 </style>
 </head>
 
@@ -171,91 +30,11 @@ color:#777;
 
 <header>
 <h1>Innovative Small Hydropower</h1>
-<p>ERGroup Renewable Energy Project</p>
+<p>ERGroup – Renewable Energy Project</p>
 <p>Email: althydroenergy@gmail.com</p>
 </header>
 
 <div class="container">
-
-<section>
-
-<h2 class="section-title">Water Flow Concept</h2>
-
-<p>
-The turbine operates in natural river flow. The animation below illustrates
-continuous kinetic energy transport through the channel.
-</p>
-
-<div class="flow-box">
-<div class="wave"></div>
-<div class="wave"></div>
-</div>
-
-</section>
-
-<section>
-
-<h2 class="section-title">Hydropower Potential Calculator</h2>
-
-<p>
-Enter approximate parameters of a river or irrigation canal.
-The calculator estimates possible power output.
-</p>
-
-<div class="calculator">
-
-<label>Flow velocity (m/s)</label>
-<input id="velocity" type="number" step="0.1" value="1">
-
-<label>Channel width (m)</label>
-<input id="width" type="number" step="0.1" value="10">
-
-<label>Water depth (m)</label>
-<input id="depth" type="number" step="0.1" value="2">
-
-<button onclick="calculatePower()">Estimate Power</button>
-
-<div id="result" class="result"></div>
-
-</div>
-
-</section>
-
-<section>
-
-<h2 class="section-title">Scientific Background</h2>
-
-<p>
-The theoretical foundation of the project is described in the research work
-on energy extraction limits in open-channel flow.
-</p>
-
-<p>
-The analysis shows that optimal energy extraction occurs near the
-dimensionless Froude number:
-</p>
-
-<p style="font-size:22px;text-align:center;">
-Fr ≈ 0.3094
-</p>
-
-<p>
-Under these conditions the theoretical maximum energy extraction approaches
-approximately 34.52% of the flow energy.
-</p>
-
-<p>
-Full scientific description is available here:
-</p>
-
-<p style="font-size:18px;text-align:center;">
-<a href="https://doi.org/10.5281/zenodo.18321384">
-https://doi.org/10.5281/zenodo.18321384
-</a>
-</p>
-
-</section>
-
 <section>
 
 <h2 class="section-title">Project Gallery</h2>
@@ -265,58 +44,109 @@ https://doi.org/10.5281/zenodo.18321384
 <img src="images/img2.jpg" onclick="openLightbox(this)">
 <img src="images/img3.jpg" onclick="openLightbox(this)">
 <img src="images/img4.jpg" onclick="openLightbox(this)">
+<img src="images/img5.jpg" onclick="openLightbox(this)">
+<img src="images/img6.jpg" onclick="openLightbox(this)">
 </div>
 
 <div id="lightbox" onclick="closeLightbox()">
 <img id="lightbox-img">
 </div>
 
+<h2 class="section-title">Short Summary</h2>
+
+<p>In an era marked by political instability, risks of a global energy crisis, soaring fuel prices and an urgent worldwide push to reduce CO2 emissions, the demand for renewable energy solutions has never been more pronounced.</p>
+
+<p>As the world transitions away from fossil fuels, with countries striving to hit their net zero targets by 2050, it is predicted that renewables such as solar, wind and hydro power will account for more than half of global energy production by the middle of the century.</p>
+
+<div class="image-block">
+<img src="IMAGE_1_PLACEHOLDER.jpg">
+</div>
+
+<p>Our project proposes the construction and mass-production of free-flow micro-hydroelectric power plants (micro HPPs), which, unlike traditional hydropower stations, do not require the construction of dams and the blocking of watercourses.</p>
+
+<p>The technology of micro HPPs can be used on lowland rivers and canals where it is not possible to maintain the required pressure for traditional dam hydropower stations either by damming or diversion.</p>
+
+<p>Compared to existing similar products, which can only work efficiently in high-speed watercourses (over 2 m/s), our turbine will work more efficiently in slow watercourses thanks to our innovative engineering research and the turbine’s design features (slower than 2 m/s).</p>
+
+<p>This effect is based on a change in the parameters of water flow so that the turbine shifts the sub-critical flow into a critical one, which has minimum energy, thanks to which the efficiency of power extraction from water flow increases.</p>
+
+<p>Therefore, under those conditions it is 60–80% more efficient than comparable devices, and that has been proven during the process of R&D which was carried out earlier.</p>
+
+<p>Thus, the design includes the Two-In-One. In other words, it is applicable on both slow and fast flows.</p>
+
+<p>Moreover, because the quantity of low speed water channels in the world significantly outnumbers the quantity of high speed canals, our design would fit well into this unoccupied niche market.</p>
+
+<div class="image-block">
+<img src="IMAGE_2_PLACEHOLDER.jpg">
+</div>
+
+<p>Partial competitors to the technology proposed by us may be other renewable energy sources, such as solar panels and wind generators.</p>
+
+<p>Compared to them, our micro HPP has advantages as to the unit power and energy output to represent a return on investment.</p>
+
+<p>Besides, our technology is more stable and non-seasonal, it does not depend on weather conditions or time of the day and can work 24/7, all year round.</p>
+
+<h2 class="section-title">What We Need & What You Get</h2>
+
+<p>For the implementation of the pilot project an investment of $150,000 (USD) is required for one year.</p>
+
+<p>These funds are needed to organize the production of micro HPPs for irrigation and electricity generation.</p>
+
+<p>It is proposed to carry out comprehensive design and development work in the first six to ten months, which will become a preparatory step towards the large-scale production of the turbines.</p>
+
+<p>In order to obtain the same amount of energy as hydropower units, wind power plants must have huge dimensions.</p>
+
+<p>This is due to the difference between the physical properties of water and air. Water is 800 times heavier than air and this dramatically affects the possibility of obtaining energy from wind compared to water.</p>
+
+<h2 class="section-title">Risks & Challenges</h2>
+
+<p>Expected risks that may affect the project implementation.</p>
+
+<p>Complications during the implementation of non-standard design decisions during R&D.</p>
+
+<p>This may require upscale engineering skill and an out-of-the-box approach.</p>
+
+<p>Such risks are tackled by a selection of qualified personnel – engineers and scientists – ready and capable to come up with solutions.</p>
+
+<p>Some of the non-standard tasks have already been resolved during the previous stages of R&D.</p>
+
+<p>A team of qualified specialists has already been formed and has worked on special elements of the project.</p>
+
+<p>During the project implementation, it is planned to use local materials, workforce and specialists.</p>
+
+<p>We are happy to consider any relevant suggestions or proposals.</p>
+
+<h2 class="section-title">How We’ll Use the Money</h2>
+
+<p>We will use the funds that will be raised during the campaign to build the pilot model of the turbine and to prepare for serial production.</p>
+
+<p>Our costs will include the rental of a riverbank section and a workshop, the purchase and rental of equipment, including welding machines, metal cutting units and hoisting equipment.</p>
+
+<p>The funds will be used to develop design documentation, to purchase materials and components such as metal sheet, pipes, a generator, pump and inverter, and to pay for labor and services.</p>
+
+<p>If a partner provides production and installation sites we will use the funds more rationally and provide detailed periodical reports on progress.</p>
+
+<a class="button" href="faq.html">Read FAQ</a>
+
 </section>
+
+<footer>
+ERGroup Renewable Energy Initiative<br><br>
+Contact: althydroenergy@gmail.com<br><br>
+Original campaign:<br>
+<a href="https://www.indiegogo.com/en/projects/ergroup/innovative-small-hydropower">View on Indiegogo</a>
+</footer>
 
 </div>
 
-<footer>
-
-ERGroup Renewable Energy Initiative
-
-<br><br>
-
-<a href="https://www.indiegogo.com/en/projects/ergroup/innovative-small-hydropower">
-Original Indiegogo Campaign
-</a>
-
-</footer>
-
 <script>
-
-function calculatePower(){
-
-let v=parseFloat(document.getElementById("velocity").value);
-let w=parseFloat(document.getElementById("width").value);
-let d=parseFloat(document.getElementById("depth").value);
-
-let rho=1000;
-let area=w*d;
-let flow=area*v;
-let power=0.5*rho*area*Math.pow(v,3);
-
-power=power*0.3452;
-
-let kw=(power/1000).toFixed(2);
-
-document.getElementById("result").innerHTML="Estimated extractable power ≈ "+kw+" kW";
-
-}
-
 function openLightbox(img){
 document.getElementById("lightbox").style.display="flex";
 document.getElementById("lightbox-img").src=img.src;
 }
-
 function closeLightbox(){
 document.getElementById("lightbox").style.display="none";
 }
-
 </script>
 
 </body>
