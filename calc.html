@@ -108,28 +108,30 @@ let d=parseFloat(document.getElementById("depth").value);
 let rho=1000;
 let g=9.81;
 
-/* energy extraction formula */
+/* Froude number */
 
-let power = rho * w * (
-    d*d * v * g +
-    d * Math.pow(v,3)/2 -
-    1.5 * Math.cbrt(Math.pow(d*v,5) * g*g)
+let Fr = v / Math.sqrt(g * d);
+
+/* extractable power from theoretical formula */
+
+let power = rho * w * Math.pow(g,1.5) * Math.pow(d,2.5) *
+(
+    Fr +
+    0.5 * Math.pow(Fr,3) -
+    1.5 * Math.pow(Fr,5/3)
 );
 
-/* upstream total */
+/* total upstream energy */
 
-let total = rho * w * (
-    d*d * v * g +
-    d * Math.pow(v,3)/2
+let total = rho * w * Math.pow(g,1.5) * Math.pow(d,2.5) *
+(
+    Fr +
+    0.5 * Math.pow(Fr,3)
 );
 
-/* efficiency */
+/* extraction percentage */
 
-let percent = (power/total)*100;
-
-/* froude */
-
-let Fr = v/Math.sqrt(g*d);
+let percent = (power / total) * 100;
 
 let kw=(power/1000).toFixed(2);
 
