@@ -87,6 +87,7 @@ Interactive calculator based on open‑channel flow energy extraction theory.
 <div id="power" class="result"></div>
 <div id="froude" class="result"></div>
 <div id="percent" class="result"></div>
+<div id="scaled" class="result"></div>
 </div>
 
 </div>
@@ -102,36 +103,42 @@ The theoretical maximum extraction limit occurs near Fr ≈ 0.3094 with η ≈ 3
 function calculate(){
 
 let v=parseFloat(document.getElementById("velocity").value);
-let w=parseFloat(document.getElementById("width").value);
-let d=parseFloat(document.getElementById("depth").value);
+let L=parseFloat(document.getElementById("width").value);
+let H=parseFloat(document.getElementById("depth").value);
 
 let rho=1000;
 let g=9.81;
 
 /* Froude number */
 
-let Fr = v / Math.sqrt(g * d);
+let Fr = v / Math.sqrt(g * H);
 
-/* extractable power from theoretical formula */
+/* scale coefficient ρ L g^(3/2) H^(5/2) */
 
-let power = rho * w * Math.pow(g,1.5) * Math.pow(d,2.5) *
-(
+let scale = rho * L * Math.pow(g,1.5) * Math.pow(H,2.5);
+
+/* bracket terms */
+
+let bracket_extract =
     Fr +
     0.5 * Math.pow(Fr,3) -
-    1.5 * Math.pow(Fr,5/3)
-);
+    1.5 * Math.pow(Fr,5/3);
 
-/* total upstream energy */
-
-let total = rho * w * Math.pow(g,1.5) * Math.pow(d,2.5) *
-(
+let bracket_total =
     Fr +
-    0.5 * Math.pow(Fr,3)
-);
+    0.5 * Math.pow(Fr,3);
 
-/* extraction percentage */
+/* power */
 
-let percent = (power / total) * 100;
+let power = scale * bracket_extract;
+
+/* efficiency relative to full flow */
+
+let percent = (bracket_extract / bracket_total) * 100;
+
+/* dimensionless coefficient */
+
+let scaled = bracket_extract;
 
 let kw=(power/1000).toFixed(2);
 
@@ -139,10 +146,13 @@ document.getElementById("power").innerHTML =
 "Extractable power: <span class='highlight'>" + kw + " kW</span>";
 
 document.getElementById("froude").innerHTML =
-"Froude number: <span class='highlight'>" + Fr.toFixed(3) + "</span>";
+"Froude number: <span class='highlight'>" + Fr.toFixed(4) + "</span>";
 
 document.getElementById("percent").innerHTML =
 "Extraction relative to full flow energy: <span class='highlight'>" + percent.toFixed(2) + " %</span>";
+
+document.getElementById("scaled").innerHTML =
+"Dimensionless energy function: <span class='highlight'>" + scaled.toFixed(4) + "</span>";
 
 drawGraph(Fr);
 
@@ -164,15 +174,17 @@ ctx.moveTo(50,350);
 ctx.lineTo(50,50);
 ctx.stroke();
 
-/* curve approximation */
-
 ctx.beginPath();
 
-for(let i=0;i<=200;i++){
+for(let i=0;i<=400;i++){
 
-let Fr=i/200;
+let Fr=i/400;
 
-let eta=34.52*Math.exp(-Math.pow((Fr-0.3094)/0.22,2));
+let eta=(
+Fr + 0.5*Math.pow(Fr,3) - 1.5*Math.pow(Fr,5/3)
+) / (
+Fr + 0.5*Math.pow(Fr,3)
+) * 100;
 
 let x=50+Fr*700;
 let y=350-eta*6;
@@ -184,21 +196,29 @@ else ctx.lineTo(x,y);
 
 ctx.stroke();
 
-/* mark optimal */
+/* optimal point */
 
-let xOpt=50+0.3094*700;
-let yOpt=350-34.52*6;
+let FrOpt=0.3094;
+let etaOpt=34.52;
+
+let xOpt=50+FrOpt*700;
+let yOpt=350-etaOpt*6;
 
 ctx.beginPath();
 ctx.arc(xOpt,yOpt,5,0,2*Math.PI);
 ctx.fill();
 
-/* mark current */
+/* current point */
 
 if(currentFr!==undefined){
 
+let eta=(
+currentFr + 0.5*Math.pow(currentFr,3) - 1.5*Math.pow(currentFr,5/3)
+) / (
+currentFr + 0.5*Math.pow(currentFr,3)
+) * 100;
+
 let x=50+currentFr*700;
-let eta=34.52*Math.exp(-Math.pow((currentFr-0.3094)/0.22,2));
 let y=350-eta*6;
 
 ctx.beginPath();
