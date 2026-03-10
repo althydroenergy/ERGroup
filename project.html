@@ -5,29 +5,165 @@
 <meta charset="UTF-8">
 <title>ERGroup – Innovative Small Hydropower</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Innovative free-flow hydropower turbine for slow rivers and canals. ERGroup renewable energy project.">
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<meta name="description" content="Free-flow hydropower turbine for slow rivers and canals. ERGroup renewable energy project.">
 
 <style>
-body{font-family:Arial,Helvetica,sans-serif;margin:0;background:#f5f7fa;color:#222;line-height:1.6;}
-header{background:#0b3d91;color:white;padding:50px 20px;text-align:center;}
-header h1{margin:0;font-size:42px;}
-.container{max-width:900px;margin:auto;padding:20px;}
-section{background:white;padding:40px;margin-top:25px;border-radius:10px;box-shadow:0 5px 18px rgba(0,0,0,0.08);}
-.section-title{font-size:28px;color:#1e5bd7;margin-top:40px;border-bottom:2px solid #e0e0e0;padding-bottom:6px;font-family:Georgia,serif;}
-img{width:100%;border-radius:6px;margin:20px 0;}
-.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px;margin:40px 0;}
-.gallery img{cursor:pointer;border-radius:6px;transition:transform .25s;}
-.gallery img:hover{transform:scale(1.05);}
-#lightbox{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.92);align-items:center;justify-content:center;z-index:9999;cursor:pointer;}
-#lightbox img{max-width:90%;max-height:90%;border-radius:6px;}
-.button{display:inline-block;margin-top:25px;background:#e91e63;color:white;padding:12px 22px;border-radius:6px;text-decoration:none;font-weight:bold;}
-.button:hover{background:#c2185b;}
-.diagram{margin:40px 0;text-align:center;}
-.diagram svg{max-width:100%;}
-.label{font-size:14px;fill:#333;}
-footer{text-align:center;padding:40px;color:#777;}
+
+body{
+font-family:Arial,Helvetica,sans-serif;
+margin:0;
+background:#f5f7fa;
+color:#222;
+line-height:1.6;
+}
+
+header{
+background:#0b3d91;
+color:white;
+padding:50px 20px;
+text-align:center;
+}
+
+header h1{
+margin:0;
+font-size:42px;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:20px;
+}
+
+section{
+background:white;
+padding:40px;
+margin-top:25px;
+border-radius:10px;
+box-shadow:0 5px 18px rgba(0,0,0,0.08);
+}
+
+.section-title{
+font-size:28px;
+color:#1e5bd7;
+margin-top:40px;
+border-bottom:2px solid #e0e0e0;
+padding-bottom:6px;
+font-family:Georgia,serif;
+}
+
+/* Water animation */
+
+.flow-box{
+height:120px;
+border-radius:8px;
+background:linear-gradient(90deg,#4fa3ff,#1b6eea);
+overflow:hidden;
+position:relative;
+margin-top:25px;
+}
+
+.wave{
+position:absolute;
+width:200%;
+height:120px;
+background:rgba(255,255,255,0.25);
+border-radius:40%;
+animation:flow 6s linear infinite;
+}
+
+.wave:nth-child(2){
+top:20px;
+animation-duration:8s;
+opacity:0.5;
+}
+
+@keyframes flow{
+0%{transform:translateX(-50%);}
+100%{transform:translateX(0);}
+}
+
+/* calculator */
+
+.calculator{
+margin-top:25px;
+background:#f0f4ff;
+padding:25px;
+border-radius:8px;
+}
+
+input{
+width:100%;
+padding:10px;
+margin-top:10px;
+margin-bottom:15px;
+font-size:16px;
+}
+
+button{
+background:#e91e63;
+color:white;
+border:none;
+padding:12px 20px;
+border-radius:6px;
+cursor:pointer;
+font-size:16px;
+}
+
+button:hover{
+background:#c2185b;
+}
+
+.result{
+font-size:22px;
+margin-top:20px;
+font-weight:bold;
+}
+
+/* gallery */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px;
+margin-top:30px;
+}
+
+.gallery img{
+width:100%;
+border-radius:6px;
+cursor:pointer;
+transition:transform .25s;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+#lightbox{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+align-items:center;
+justify-content:center;
+z-index:9999;
+}
+
+#lightbox img{
+max-width:90%;
+max-height:90%;
+}
+
+footer{
+text-align:center;
+padding:40px;
+color:#777;
+}
+
 </style>
 </head>
 
@@ -35,11 +171,90 @@ footer{text-align:center;padding:40px;color:#777;}
 
 <header>
 <h1>Innovative Small Hydropower</h1>
-<p>ERGroup – Renewable Energy Project</p>
+<p>ERGroup Renewable Energy Project</p>
 <p>Email: althydroenergy@gmail.com</p>
 </header>
 
 <div class="container">
+
+<section>
+
+<h2 class="section-title">Water Flow Concept</h2>
+
+<p>
+The turbine operates in natural river flow. The animation below illustrates
+continuous kinetic energy transport through the channel.
+</p>
+
+<div class="flow-box">
+<div class="wave"></div>
+<div class="wave"></div>
+</div>
+
+</section>
+
+<section>
+
+<h2 class="section-title">Hydropower Potential Calculator</h2>
+
+<p>
+Enter approximate parameters of a river or irrigation canal.
+The calculator estimates possible power output.
+</p>
+
+<div class="calculator">
+
+<label>Flow velocity (m/s)</label>
+<input id="velocity" type="number" step="0.1" value="1">
+
+<label>Channel width (m)</label>
+<input id="width" type="number" step="0.1" value="10">
+
+<label>Water depth (m)</label>
+<input id="depth" type="number" step="0.1" value="2">
+
+<button onclick="calculatePower()">Estimate Power</button>
+
+<div id="result" class="result"></div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="section-title">Scientific Background</h2>
+
+<p>
+The theoretical foundation of the project is described in the research work
+on energy extraction limits in open-channel flow.
+</p>
+
+<p>
+The analysis shows that optimal energy extraction occurs near the
+dimensionless Froude number:
+</p>
+
+<p style="font-size:22px;text-align:center;">
+Fr ≈ 0.3094
+</p>
+
+<p>
+Under these conditions the theoretical maximum energy extraction approaches
+approximately 34.52% of the flow energy.
+</p>
+
+<p>
+Full scientific description is available here:
+</p>
+
+<p style="font-size:18px;text-align:center;">
+<a href="https://doi.org/10.5281/zenodo.18321384">
+https://doi.org/10.5281/zenodo.18321384
+</a>
+</p>
+
+</section>
 
 <section>
 
@@ -50,127 +265,58 @@ footer{text-align:center;padding:40px;color:#777;}
 <img src="images/img2.jpg" onclick="openLightbox(this)">
 <img src="images/img3.jpg" onclick="openLightbox(this)">
 <img src="images/img4.jpg" onclick="openLightbox(this)">
-<img src="images/img5.jpg" onclick="openLightbox(this)">
-<img src="images/img6.jpg" onclick="openLightbox(this)">
 </div>
 
 <div id="lightbox" onclick="closeLightbox()">
 <img id="lightbox-img">
 </div>
 
-<h2 class="section-title">Interactive Turbine Concept</h2>
-
-<div class="diagram">
-<svg viewBox="0 0 600 250">
-
-<rect x="0" y="120" width="600" height="80" fill="#d0e6ff"/>
-<circle cx="220" cy="150" r="50" fill="#888"/>
-<circle cx="380" cy="150" r="50" fill="#888"/>
-
-<text x="200" y="60" class="label">Upstream Wheel</text>
-<text x="360" y="60" class="label">Downstream Wheel</text>
-
-<line x1="270" y1="150" x2="330" y2="150" stroke="#000" stroke-width="3"/>
-
-<text x="250" y="210" class="label">Coupled tandem turbine system</text>
-
-</svg>
-</div>
-
-<h2 class="section-title">Scientific Basis</h2>
-
-<p>
-The operation principle of the turbine is based on hydrodynamic transformation
-of open-channel flow regimes. In particular, the turbine induces a transition
-of the flow toward the critical regime where the total specific energy of
-the stream is minimal.
-</p>
-
-<p>
-Theoretical analysis shows that the optimal condition occurs near the
-dimensionless parameter known as the Froude number:
-</p>
-
-<p style="font-size:22px;text-align:center;">
-Fr ≈ 0.3094
-</p>
-
-<p>
-Under these conditions the flow reaches a configuration where the extractable
-portion of mechanical energy from the stream approaches a universal limit
-analogous to the Betz limit known in wind energy.
-</p>
-
-<p>
-For open-channel flow this theoretical limit corresponds to approximately:
-</p>
-
-<p style="font-size:22px;text-align:center;">
-34.52 % of the total flow energy
-</p>
-
-<h2 class="section-title">Energy Extraction Limit</h2>
-
-<canvas id="energyChart"></canvas>
-
-<script>
-const ctx=document.getElementById('energyChart');
-
-new Chart(ctx,{
-type:'line',
-data:{
-labels:[0,0.1,0.2,0.3,0.3094,0.4,0.5,0.6,0.7,0.8],
-datasets:[{
-label:'Extractable Energy Fraction',
-data:[0,0.08,0.18,0.30,0.3452,0.32,0.28,0.24,0.20,0.15],
-fill:false,
-borderWidth:3
-}]
-},
-options:{
-plugins:{
-legend:{display:true}
-},
-scales:{
-x:{title:{display:true,text:'Froude Number'}},
-y:{title:{display:true,text:'Energy Fraction'}}
-}
-}
-});
-</script>
-
-<h2 class="section-title">Short Summary</h2>
-
-<p>
-Our project proposes the construction and mass‑production of free‑flow
-micro‑hydroelectric power plants (micro HPPs) which do not require dams.
-</p>
-
-<p>
-The turbine is optimized for slow rivers and irrigation canals where
-conventional turbines are inefficient.
-</p>
-
-<a class="button" href="faq.html">Read FAQ</a>
-
 </section>
 
-<footer>
-ERGroup Renewable Energy Initiative<br><br>
-Contact: althydroenergy@gmail.com<br><br>
-<a href="https://www.indiegogo.com/en/projects/ergroup/innovative-small-hydropower">Original campaign</a>
-</footer>
-
 </div>
 
+<footer>
+
+ERGroup Renewable Energy Initiative
+
+<br><br>
+
+<a href="https://www.indiegogo.com/en/projects/ergroup/innovative-small-hydropower">
+Original Indiegogo Campaign
+</a>
+
+</footer>
+
 <script>
+
+function calculatePower(){
+
+let v=parseFloat(document.getElementById("velocity").value);
+let w=parseFloat(document.getElementById("width").value);
+let d=parseFloat(document.getElementById("depth").value);
+
+let rho=1000;
+let area=w*d;
+let flow=area*v;
+let power=0.5*rho*area*Math.pow(v,3);
+
+power=power*0.3452;
+
+let kw=(power/1000).toFixed(2);
+
+document.getElementById("result").innerHTML="Estimated extractable power ≈ "+kw+" kW";
+
+}
+
 function openLightbox(img){
 document.getElementById("lightbox").style.display="flex";
 document.getElementById("lightbox-img").src=img.src;
 }
+
 function closeLightbox(){
 document.getElementById("lightbox").style.display="none";
 }
+
 </script>
 
 </body>
