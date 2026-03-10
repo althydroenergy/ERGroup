@@ -1,10 +1,13 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <title>ERGroup – Innovative Small Hydropower</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Innovative free‑flow hydropower turbine for slow rivers and canals. ERGroup renewable energy project.">
+<meta name="description" content="Innovative free-flow hydropower turbine for slow rivers and canals. ERGroup renewable energy project.">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <style>
 body{font-family:Arial,Helvetica,sans-serif;margin:0;background:#f5f7fa;color:#222;line-height:1.6;}
@@ -14,7 +17,6 @@ header h1{margin:0;font-size:42px;}
 section{background:white;padding:40px;margin-top:25px;border-radius:10px;box-shadow:0 5px 18px rgba(0,0,0,0.08);}
 .section-title{font-size:28px;color:#1e5bd7;margin-top:40px;border-bottom:2px solid #e0e0e0;padding-bottom:6px;font-family:Georgia,serif;}
 img{width:100%;border-radius:6px;margin:20px 0;}
-.image-block{text-align:center;margin:30px 0;}
 .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px;margin:40px 0;}
 .gallery img{cursor:pointer;border-radius:6px;transition:transform .25s;}
 .gallery img:hover{transform:scale(1.05);}
@@ -22,6 +24,9 @@ img{width:100%;border-radius:6px;margin:20px 0;}
 #lightbox img{max-width:90%;max-height:90%;border-radius:6px;}
 .button{display:inline-block;margin-top:25px;background:#e91e63;color:white;padding:12px 22px;border-radius:6px;text-decoration:none;font-weight:bold;}
 .button:hover{background:#c2185b;}
+.diagram{margin:40px 0;text-align:center;}
+.diagram svg{max-width:100%;}
+.label{font-size:14px;fill:#333;}
 footer{text-align:center;padding:40px;color:#777;}
 </style>
 </head>
@@ -35,6 +40,7 @@ footer{text-align:center;padding:40px;color:#777;}
 </header>
 
 <div class="container">
+
 <section>
 
 <h2 class="section-title">Project Gallery</h2>
@@ -52,79 +58,98 @@ footer{text-align:center;padding:40px;color:#777;}
 <img id="lightbox-img">
 </div>
 
+<h2 class="section-title">Interactive Turbine Concept</h2>
+
+<div class="diagram">
+<svg viewBox="0 0 600 250">
+
+<rect x="0" y="120" width="600" height="80" fill="#d0e6ff"/>
+<circle cx="220" cy="150" r="50" fill="#888"/>
+<circle cx="380" cy="150" r="50" fill="#888"/>
+
+<text x="200" y="60" class="label">Upstream Wheel</text>
+<text x="360" y="60" class="label">Downstream Wheel</text>
+
+<line x1="270" y1="150" x2="330" y2="150" stroke="#000" stroke-width="3"/>
+
+<text x="250" y="210" class="label">Coupled tandem turbine system</text>
+
+</svg>
+</div>
+
+<h2 class="section-title">Scientific Basis</h2>
+
+<p>
+The operation principle of the turbine is based on hydrodynamic transformation
+of open-channel flow regimes. In particular, the turbine induces a transition
+of the flow toward the critical regime where the total specific energy of
+the stream is minimal.
+</p>
+
+<p>
+Theoretical analysis shows that the optimal condition occurs near the
+dimensionless parameter known as the Froude number:
+</p>
+
+<p style="font-size:22px;text-align:center;">
+Fr ≈ 0.3094
+</p>
+
+<p>
+Under these conditions the flow reaches a configuration where the extractable
+portion of mechanical energy from the stream approaches a universal limit
+analogous to the Betz limit known in wind energy.
+</p>
+
+<p>
+For open-channel flow this theoretical limit corresponds to approximately:
+</p>
+
+<p style="font-size:22px;text-align:center;">
+34.52 % of the total flow energy
+</p>
+
+<h2 class="section-title">Energy Extraction Limit</h2>
+
+<canvas id="energyChart"></canvas>
+
+<script>
+const ctx=document.getElementById('energyChart');
+
+new Chart(ctx,{
+type:'line',
+data:{
+labels:[0,0.1,0.2,0.3,0.3094,0.4,0.5,0.6,0.7,0.8],
+datasets:[{
+label:'Extractable Energy Fraction',
+data:[0,0.08,0.18,0.30,0.3452,0.32,0.28,0.24,0.20,0.15],
+fill:false,
+borderWidth:3
+}]
+},
+options:{
+plugins:{
+legend:{display:true}
+},
+scales:{
+x:{title:{display:true,text:'Froude Number'}},
+y:{title:{display:true,text:'Energy Fraction'}}
+}
+}
+});
+</script>
+
 <h2 class="section-title">Short Summary</h2>
 
-<p>In an era marked by political instability, risks of a global energy crisis, soaring fuel prices and an urgent worldwide push to reduce CO2 emissions, the demand for renewable energy solutions has never been more pronounced.</p>
+<p>
+Our project proposes the construction and mass‑production of free‑flow
+micro‑hydroelectric power plants (micro HPPs) which do not require dams.
+</p>
 
-<p>As the world transitions away from fossil fuels, with countries striving to hit their net zero targets by 2050, it is predicted that renewables such as solar, wind and hydro power will account for more than half of global energy production by the middle of the century.</p>
-
-<div class="image-block">
-<img src="IMAGE_1_PLACEHOLDER.jpg">
-</div>
-
-<p>Our project proposes the construction and mass-production of free-flow micro-hydroelectric power plants (micro HPPs), which, unlike traditional hydropower stations, do not require the construction of dams and the blocking of watercourses.</p>
-
-<p>The technology of micro HPPs can be used on lowland rivers and canals where it is not possible to maintain the required pressure for traditional dam hydropower stations either by damming or diversion.</p>
-
-<p>Compared to existing similar products, which can only work efficiently in high-speed watercourses (over 2 m/s), our turbine will work more efficiently in slow watercourses thanks to our innovative engineering research and the turbine’s design features (slower than 2 m/s).</p>
-
-<p>This effect is based on a change in the parameters of water flow so that the turbine shifts the sub-critical flow into a critical one, which has minimum energy, thanks to which the efficiency of power extraction from water flow increases.</p>
-
-<p>Therefore, under those conditions it is 60–80% more efficient than comparable devices, and that has been proven during the process of R&D which was carried out earlier.</p>
-
-<p>Thus, the design includes the Two-In-One. In other words, it is applicable on both slow and fast flows.</p>
-
-<p>Moreover, because the quantity of low speed water channels in the world significantly outnumbers the quantity of high speed canals, our design would fit well into this unoccupied niche market.</p>
-
-<div class="image-block">
-<img src="IMAGE_2_PLACEHOLDER.jpg">
-</div>
-
-<p>Partial competitors to the technology proposed by us may be other renewable energy sources, such as solar panels and wind generators.</p>
-
-<p>Compared to them, our micro HPP has advantages as to the unit power and energy output to represent a return on investment.</p>
-
-<p>Besides, our technology is more stable and non-seasonal, it does not depend on weather conditions or time of the day and can work 24/7, all year round.</p>
-
-<h2 class="section-title">What We Need & What You Get</h2>
-
-<p>For the implementation of the pilot project an investment of $150,000 (USD) is required for one year.</p>
-
-<p>These funds are needed to organize the production of micro HPPs for irrigation and electricity generation.</p>
-
-<p>It is proposed to carry out comprehensive design and development work in the first six to ten months, which will become a preparatory step towards the large-scale production of the turbines.</p>
-
-<p>In order to obtain the same amount of energy as hydropower units, wind power plants must have huge dimensions.</p>
-
-<p>This is due to the difference between the physical properties of water and air. Water is 800 times heavier than air and this dramatically affects the possibility of obtaining energy from wind compared to water.</p>
-
-<h2 class="section-title">Risks & Challenges</h2>
-
-<p>Expected risks that may affect the project implementation.</p>
-
-<p>Complications during the implementation of non-standard design decisions during R&D.</p>
-
-<p>This may require upscale engineering skill and an out-of-the-box approach.</p>
-
-<p>Such risks are tackled by a selection of qualified personnel – engineers and scientists – ready and capable to come up with solutions.</p>
-
-<p>Some of the non-standard tasks have already been resolved during the previous stages of R&D.</p>
-
-<p>A team of qualified specialists has already been formed and has worked on special elements of the project.</p>
-
-<p>During the project implementation, it is planned to use local materials, workforce and specialists.</p>
-
-<p>We are happy to consider any relevant suggestions or proposals.</p>
-
-<h2 class="section-title">How We’ll Use the Money</h2>
-
-<p>We will use the funds that will be raised during the campaign to build the pilot model of the turbine and to prepare for serial production.</p>
-
-<p>Our costs will include the rental of a riverbank section and a workshop, the purchase and rental of equipment, including welding machines, metal cutting units and hoisting equipment.</p>
-
-<p>The funds will be used to develop design documentation, to purchase materials and components such as metal sheet, pipes, a generator, pump and inverter, and to pay for labor and services.</p>
-
-<p>If a partner provides production and installation sites we will use the funds more rationally and provide detailed periodical reports on progress.</p>
+<p>
+The turbine is optimized for slow rivers and irrigation canals where
+conventional turbines are inefficient.
+</p>
 
 <a class="button" href="faq.html">Read FAQ</a>
 
@@ -133,8 +158,7 @@ footer{text-align:center;padding:40px;color:#777;}
 <footer>
 ERGroup Renewable Energy Initiative<br><br>
 Contact: althydroenergy@gmail.com<br><br>
-Original campaign:<br>
-<a href="https://www.indiegogo.com/en/projects/ergroup/innovative-small-hydropower">View on Indiegogo</a>
+<a href="https://www.indiegogo.com/en/projects/ergroup/innovative-small-hydropower">Original campaign</a>
 </footer>
 
 </div>
