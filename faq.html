@@ -1,10 +1,10 @@
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 
 <meta charset="UTF-8">
 <title>ERGroup Hydropower FAQ</title>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -58,7 +58,7 @@ padding-left:35px;
 }
 
 .faq-item.active .answer{
-max-height:1000px;
+max-height:500px;
 margin-top:10px;
 }
 
@@ -75,103 +75,33 @@ margin-top:40px;
 display:inline-block;
 }
 
-/* Water animation */
-
-.flow-box{
-height:120px;
-border-radius:8px;
-background:linear-gradient(90deg,#4fa3ff,#1b6eea);
-overflow:hidden;
-position:relative;
-margin-top:20px;
-}
-
-.wave{
-position:absolute;
-width:200%;
-height:120px;
-background:rgba(255,255,255,0.25);
-border-radius:40%;
-animation:flow 6s linear infinite;
-}
-
-.wave:nth-child(2){
-top:20px;
-animation-duration:8s;
-opacity:0.5;
-}
-
-@keyframes flow{
-0%{transform:translateX(-50%);}
-100%{transform:translateX(0);}
-}
-
-/* calculator */
-
-.calculator{
-margin-top:20px;
-background:#f0f4ff;
-padding:20px;
-border-radius:8px;
-}
-
-.calculator input{
-width:100%;
-padding:8px;
-margin-top:8px;
-margin-bottom:10px;
-}
-
-.calculator button{
-background:#e91e63;
-color:white;
-border:none;
-padding:10px 16px;
-border-radius:6px;
-cursor:pointer;
-}
-
-.result{
-font-weight:bold;
-margin-top:15px;
-font-size:18px;
-}
-
 </style>
 
 <script>
 
 function toggleFAQ(element){
-const item = element.parentElement;
-item.classList.toggle("active");
+
+const item=element.parentElement
+
+item.classList.toggle("active")
+
 }
 
 window.onload=function(){
+
 if(location.hash){
+
 let target=document.querySelector(location.hash)
+
 if(target){
+
 target.classList.add("active")
+
 target.scrollIntoView()
+
 }
+
 }
-}
-
-function calculatePower(){
-
-let v=parseFloat(document.getElementById("velocity").value);
-let w=parseFloat(document.getElementById("width").value);
-let d=parseFloat(document.getElementById("depth").value);
-
-let rho=1000;
-let area=w*d;
-
-let power=0.5*rho*area*Math.pow(v,3);
-power=power*0.3452;
-
-let kw=(power/1000).toFixed(2);
-
-document.getElementById("result").innerHTML=
-"Estimated extractable power ≈ "+kw+" kW";
 
 }
 
@@ -189,7 +119,9 @@ document.getElementById("result").innerHTML=
 Why is your unit more favorable than solar panels?
 <span class="arrow">▶</span>
 </div>
-<div class="answer">Our water turbine is even cleaner and cheaper than solar energy as it does not depend on weather conditions, the time of the day or season and can operate 24/7 at full capacity.</div>
+<div class="answer">
+Our water turbine is even cleaner and cheaper than solar energy as it does not depend on weather conditions, the time of the day or season and can operate 24/7 at full capacity.
+</div>
 </div>
 
 <div class="faq-item" id="q2">
@@ -198,7 +130,9 @@ Why is your unit more favorable than solar panels?
 Is it environmentally friendlier than solar panels?
 <span class="arrow">▶</span>
 </div>
-<div class="answer">Compared to solar power stations (SPS), hydraulic turbines also have additional environmental advantages, as they do not have "consumable" components, such as batteries and solar panels, which are the main equipment in SPSs. They have a limited service life due to degradation of these components over time. And their production and utilization is not environmentally-friendly.</div>
+<div class="answer">
+Compared to solar power stations (SPS), hydraulic turbines also have additional environmental advantages, as they do not have "consumable" components, such as batteries and solar panels, which are the main equipment in SPSs. They have a limited service life due to degradation of these components over time. And their production and utilization is not environmentally-friendly.
+</div>
 </div>
 
 <div class="faq-item" id="q3">
@@ -207,7 +141,9 @@ Is it environmentally friendlier than solar panels?
 What is the power capacity of your turbine?
 <span class="arrow">▶</span>
 </div>
-<div class="answer">The approximate power capacity of the smallest unit is 3 kW. This allows the generation of more than 70 kWh of electricity per day, which is enough to power two to three large houses.In this case, only additional technical means are needed to compensate for peak loads.</div>
+<div class="answer">
+The approximate power capacity of the smallest unit is 3 kW. This allows the generation of more than 70 kWh of electricity per day, which is enough to power two to three large houses.In this case, only additional technical means are needed to compensate for peak loads.
+</div>
 </div>
 
 <div class="faq-item" id="q4">
@@ -216,7 +152,9 @@ What is the power capacity of your turbine?
 Can one such unit supply electricity to a farm or a whole village?
 <span class="arrow">▶</span>
 </div>
-<div class="answer">Larger hydropower units can have a capacity of up to 200-300 kW, which is enough to supply a farm, village, or a settlement. This is possible on channels with a depth of at least 2 meters and a width of 10 meters or more. In this case, annual power generation can reach 1.5-2 GWh. It is also possible to install a cascade of several small modules connected to one power plant. Such units can be placed at a distance of at least 100 m from each other.</div>
+<div class="answer">
+Larger hydropower units can have a capacity of up to 200-300 kW, which is enough to supply a farm, village, or a settlement. This is possible on channels with a depth of at least 2 meters and a width of 10 meters or more. In this case, annual power generation can reach 1.5-2 GWh. It is also possible to install a cascade of several small modules connected to one power plant. Such units can be placed at a distance of at least 100 m from each other.
+</div>
 </div>
 
 <div class="faq-item" id="q5">
@@ -225,7 +163,11 @@ Can one such unit supply electricity to a farm or a whole village?
 What makes your turbine different from existing similar ones? What are the advantages of your turbine over existing similar technologies?
 <span class="arrow">▶</span>
 </div>
-<div class="answer">Our turbine's diagram may be reminiscent of a well-known waterwheel, which is inefficient at low flow velocities. Our turbine consists of two such wheels connected in a special design that allows them to be used much more efficiently in slow water flow. For more details, please see our scientific work that proves high efficiency of such tandem design:<br><br><a href='https://erg.ucoz.org/ISJAEE-12-2010-eng.pdf'>https://erg.ucoz.org/ISJAEE-12-2010-eng.pdf</a></div>
+<div class="answer">
+Our turbine's diagram may be reminiscent of a well-known waterwheel, which is inefficient at low flow velocities. Our turbine consists of two such wheels connected in a special design that allows them to be used much more efficiently in slow water flow. For more details, please see our scientific work that proves high efficiency of such tandem design:
+<br><br>
+<a href="https://erg.ucoz.org/ISJAEE-12-2010-eng.pdf">https://erg.ucoz.org/ISJAEE-12-2010-eng.pdf</a>
+</div>
 </div>
 
 <div class="faq-item" id="q6">
@@ -234,7 +176,9 @@ What makes your turbine different from existing similar ones? What are the advan
 Will floating debris hamper the operation of the turbine?
 <span class="arrow">▶</span>
 </div>
-<div class="answer">A protective web installed in front of the turbine will drive off branches, chunks, animal corpse, and other major debries from the turbine. The modern hydropower industry offers various well-developed protection techniques and it will not be a big challenge. Fine debris will flow through the turbine without impeding its work.</div>
+<div class="answer">
+A protective web installed in front of the turbine will drive off branches, chunks, animal corpse, and other major debries from the turbine. The modern hydropower industry offers various well-developed protection techniques and it will not be a big challenge. Fine debris will flow through the turbine without impeding its work.
+</div>
 </div>
 
 <div class="faq-item" id="q7">
@@ -243,7 +187,9 @@ Will floating debris hamper the operation of the turbine?
 Will the turbine harm fish?
 <span class="arrow">▶</span>
 </div>
-<div class="answer">Our turbine does not harm the fauna of rivers as it does not completely block the channel and makes only about 20-30 rotations per minute, which is dozens of times slower than the propellers of boats, ships, or traditional hydro turbines. For fish, this turbine will be similar to a natural obstacle, such as a small island or a waterfall. On the contrary, our turbine will additionally aerate the water which is beneficial for river fauna and flora.</div>
+<div class="answer">
+Our turbine does not harm the fauna of rivers as it does not completely block the channel and makes only about 20-30 rotations per minute, which is dozens of times slower than the propellers of boats, ships, or traditional hydro turbines. For fish, this turbine will be similar to a natural obstacle, such as a small island or a waterfall. On the contrary, our turbine will additionally aerate the water which is beneficial for river fauna and flora.
+</div>
 </div>
 
 <div class="faq-item" id="q8">
@@ -252,7 +198,9 @@ Will the turbine harm fish?
 Would they slow the flow/hinder one another if several pieces operate in one section of stream?
 <span class="arrow">▶</span>
 </div>
-<div class="answer">It is possible to install a cascade of several small modules connected to one power plant. Such units can be placed at a distance of at least 100 m from each other and do not influence each other in any way.</div>
+<div class="answer">
+It is possible to install a cascade of several small modules connected to one power plant. Such units can be placed at a distance of at least 100 m from each other and do not influence each other in any way.
+</div>
 </div>
 
 <div class="faq-item" id="q9">
@@ -261,7 +209,9 @@ Would they slow the flow/hinder one another if several pieces operate in one sec
 How much electricity does it produceat a current flow of 1 m/s, 2m/s and so on?
 <span class="arrow">▶</span>
 </div>
-<div class="answer">Standard free-flow turbines are efficient only with water flow speeds of 2 m/s and higher. At a speed of 1 m/s, their efficiency decreases eightfold! Our turbine has high efficiency in watercourses slower than 2 m/s. More detailed information is available in the text.</div>
+<div class="answer">
+Standard free-flow turbines are efficient only with water flow speeds of 2 m/s and higher. At a speed of 1 m/s, their efficiency decreases eightfold! Our turbine has high efficiency in watercourses slower than 2 m/s. More detailed information is available in the text.
+</div>
 </div>
 
 <div class="faq-item" id="q10">
@@ -270,7 +220,9 @@ How much electricity does it produceat a current flow of 1 m/s, 2m/s and so on?
 Does it work in all weather conditions? How can floods affect the turbine?
 <span class="arrow">▶</span>
 </div>
-<div class="answer">The turbine floats in water and its key components are waterproof and rain cannot is not an obstacle to its work. The turbine is fixed to pontoon and when the river's water level raises, the turbine remains floating on the water surface and continue to work.</div>
+<div class="answer">
+The turbine floats in water and its key components are waterproof and rain cannot is not an obstacle to its work. The turbine is fixed to pontoon and when the river's water level raises, the turbine remains floating on the water surface and continue to work.
+</div>
 </div>
 
 <div class="faq-item" id="q11">
@@ -279,7 +231,9 @@ Does it work in all weather conditions? How can floods affect the turbine?
 What's the possible market size of your machine?
 <span class="arrow">▶</span>
 </div>
-<div class="answer">Our clients will include farmers, businesses, and private households across the world and governments interested in improving remote settlements and develop renewables.</div>
+<div class="answer">
+Our clients will include farmers, businesses, and private households across the world and governments interested in improving remote settlements and develop renewables.
+</div>
 </div>
 
 <div class="faq-item" id="q12">
@@ -288,7 +242,9 @@ What's the possible market size of your machine?
 What is the cost of the turbine?
 <span class="arrow">▶</span>
 </div>
-<div class="answer">Our hydropower turbine's estimated cost will be calculated as $2,000-3,000 per 1 kW depending on configuration. The cost will be determined after the completion of a pilot project and during the scale-up. The turbine's cost is expected to be paid off within 2-3 years of operation. More economic estimates are given in the main text.</div>
+<div class="answer">
+Our hydropower turbine's estimated cost will be calculated as $2,000-3,000 per 1 kW depending on configuration. The cost will be determined after the completion of a pilot project and during the scale-up. The turbine's cost is expected to be paid off within 2-3 years of operation. More economic estimates are given in the main text.
+</div>
 </div>
 
 <div class="faq-item" id="q13">
@@ -297,7 +253,9 @@ What is the cost of the turbine?
 What are the turbine's disadvantages?
 <span class="arrow">▶</span>
 </div>
-<div class="answer">The depth of the river or canal is critical for the turbine's efficiency. The turbine's minimal height should be 2 meters as calculations show that such turbines' efficiency is low in streams with a depth of less than 1 meter and water flow velocity less than 1.5 m/sec. The turbine's minimal height should be 2 meters to achieve its design capacity.</div>
+<div class="answer">
+The depth of the river or canal is critical for the turbine's efficiency. The turbine's minimal height should be 2 meters as calculations show that such turbines' efficiency is low in streams with a depth of less than 1 meter and water flow velocity less than 1.5 m/sec. The turbine's minimal height should be 2 meters to achieve its design capacity.
+</div>
 </div>
 
 <div class="faq-item" id="q14">
@@ -306,7 +264,9 @@ What are the turbine's disadvantages?
 Where will the pilot project be implemented?
 <span class="arrow">▶</span>
 </div>
-<div class="answer">We are open to consider any proposals from any countries for the implementation of the project. Site technical requirements must correspond to specifications described in the section "Other Ways You Can Help". Other requirements include visa support, accommodation, and working conditions for our team.</div>
+<div class="answer">
+We are open to consider any proposals from any countries for the implementation of the project. Site technical requirements must correspond to specifications described in the section "Other Ways You Can Help". Other requirements include visa support, accommodation, and working conditions for our team.
+</div>
 </div>
 
 <div class="faq-item" id="q15">
@@ -315,8 +275,112 @@ Where will the pilot project be implemented?
 How will the funds raised during the campaign be used?
 <span class="arrow">▶</span>
 </div>
-<div class="answer">We will use the funds to implement a pilot project, as a result of which we will scale up the production of energy modules. Read more detailed information in "How We'll Use the Money".</div>
+<div class="answer">
+We will use the funds to implement a pilot project, as a result of which we will scale up the production of energy modules. Read more detailed information in "How We'll Use the Money".
 </div>
+</div>
+
+
+
+<!-- Added scientific demo blocks -->
+
+<style>
+.flow-box{
+height:120px;
+border-radius:8px;
+background:linear-gradient(90deg,#4fa3ff,#1b6eea);
+overflow:hidden;
+position:relative;
+margin-top:20px;
+}
+.wave{
+position:absolute;
+width:200%;
+height:120px;
+background:rgba(255,255,255,0.25);
+border-radius:40%;
+animation:flow 6s linear infinite;
+}
+.wave:nth-child(2){
+top:20px;
+animation-duration:8s;
+opacity:0.5;
+}
+@keyframes flow{
+0%{transform:translateX(-50%);}
+100%{transform:translateX(0);}
+}
+.calculator{
+margin-top:20px;
+background:#f0f4ff;
+padding:20px;
+border-radius:8px;
+}
+.calculator input{
+width:100%;
+padding:8px;
+margin-top:8px;
+margin-bottom:10px;
+}
+.calculator button{
+background:#e91e63;
+color:white;
+border:none;
+padding:10px 16px;
+border-radius:6px;
+cursor:pointer;
+}
+.result{
+font-weight:bold;
+margin-top:15px;
+font-size:18px;
+}
+</style>
+
+<script>
+
+function calculateHydro(){
+
+let v=parseFloat(document.getElementById("velocity").value);
+let w=parseFloat(document.getElementById("width").value);
+let d=parseFloat(document.getElementById("depth").value);
+
+let rho=1000;
+let g=9.81;
+
+/* Your theoretical extraction formula */
+let power = rho * w * (
+    d*d * v * g +
+    d * Math.pow(v,3)/2 -
+    1.5 * Math.cbrt(Math.pow(d*v,5) * g*g)
+);
+
+/* Total upstream energy flux */
+let total = rho * w * (
+    d*d * v * g +
+    d * Math.pow(v,3)/2
+);
+
+/* Efficiency relative to full flow energy */
+let percent = (power/total)*100;
+
+/* Froude number */
+let Fr = v / Math.sqrt(g*d);
+
+let kw=(power/1000).toFixed(2);
+
+document.getElementById("result").innerHTML =
+"Extractable power ≈ " + kw + " kW";
+
+document.getElementById("froude").innerHTML =
+"Froude number Fr = " + Fr.toFixed(3);
+
+document.getElementById("percent").innerHTML =
+"Extraction relative to full flow energy ≈ " + percent.toFixed(2) + " %";
+
+}
+
+</script>
 
 <div class="faq-item" id="q16">
 <div class="question" onclick="toggleFAQ(this)">
@@ -325,11 +389,13 @@ How does water flow through the turbine?
 <span class="arrow">▶</span>
 </div>
 <div class="answer">
-<p>The turbine operates in natural river flow. The animation below illustrates continuous kinetic energy transport through the channel.</p>
+<p>The animation below illustrates the continuous kinetic energy transport in an open channel flow.</p>
+
 <div class="flow-box">
 <div class="wave"></div>
 <div class="wave"></div>
 </div>
+
 </div>
 </div>
 
@@ -352,14 +418,21 @@ Hydropower Potential Calculator
 <label>Water depth (m)</label>
 <input id="depth" type="number" step="0.1" value="2">
 
-<button onclick="calculatePower()">Estimate Power</button>
+<button onclick="calculateHydro()">Calculate</button>
 
 <div id="result" class="result"></div>
+<div id="froude"></div>
+<div id="percent"></div>
+
+<p style="font-size:13px;color:#666;margin-top:10px">
+Calculation based on the theoretical open‑channel energy extraction model.
+</p>
 
 </div>
 
 </div>
 </div>
+
 
 <a class="back" href="project.html">← Back to project page</a>
 
