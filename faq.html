@@ -1,6 +1,5 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
@@ -11,7 +10,7 @@
 <style>
 
 body{
-font-family:Arial, Helvetica, sans-serif;
+font-family:Arial,Helvetica,sans-serif;
 max-width:900px;
 margin:auto;
 padding:40px;
@@ -24,28 +23,38 @@ margin-bottom:40px;
 }
 
 .faq-item{
-border-bottom:1px solid #ddd;
+border-bottom:1px solid #e0e0e0;
 padding:15px 0;
 }
 
 .question{
-font-weight:bold;
 cursor:pointer;
 font-size:18px;
+font-weight:bold;
 display:flex;
 align-items:center;
 }
 
-.arrow{
-transition: transform 0.3s;
+.number{
+background:#2c6cff;
+color:white;
+border-radius:4px;
+padding:3px 8px;
 margin-right:10px;
+font-size:14px;
+}
+
+.arrow{
+margin-left:auto;
+transition:transform 0.3s;
 }
 
 .answer{
 max-height:0;
 overflow:hidden;
 transition:max-height 0.4s ease;
-margin-left:22px;
+color:#444;
+padding-left:35px;
 }
 
 .faq-item.active .answer{
@@ -58,7 +67,7 @@ transform:rotate(90deg);
 }
 
 a{
-color:#2c5aa0;
+color:#2c6cff;
 }
 
 .back{
@@ -70,15 +79,11 @@ display:inline-block;
 
 <script>
 
-function toggleFaq(element){
+function toggleFAQ(element){
 
-let item=element.parentElement;
+const item=element.parentElement
 
-item.classList.toggle("active");
-
-let id=item.id;
-
-history.replaceState(null,null,"#"+id);
+item.classList.toggle("active")
 
 }
 
@@ -86,11 +91,14 @@ window.onload=function(){
 
 if(location.hash){
 
-let el=document.querySelector(location.hash);
+let target=document.querySelector(location.hash)
 
-if(el){
-el.classList.add("active");
-el.scrollIntoView();
+if(target){
+
+target.classList.add("active")
+
+target.scrollIntoView()
+
 }
 
 }
@@ -106,145 +114,171 @@ el.scrollIntoView();
 <h1>Frequently Asked Questions</h1>
 
 <div class="faq-item" id="q1">
-<div class="question" onclick="toggleFaq(this)">
-<span class="arrow">▶</span> 1. Why is your unit more favorable than solar panels?
+<div class="question" onclick="toggleFAQ(this)">
+<span class="number">1</span>
+Why is your unit more favorable than solar panels?
+<span class="arrow">▶</span>
 </div>
 <div class="answer">
-Our water turbine does not depend on weather conditions, the time of day, or season and can operate 24/7 at full capacity.
+Our water turbine is even cleaner and cheaper than solar energy as it does not depend on weather conditions, the time of the day or season and can operate 24/7 at full capacity.
 </div>
 </div>
 
 <div class="faq-item" id="q2">
-<div class="question" onclick="toggleFaq(this)">
-<span class="arrow">▶</span> 2. Is it environmentally friendlier than solar panels?
+<div class="question" onclick="toggleFAQ(this)">
+<span class="number">2</span>
+Is it environmentally friendlier than solar panels?
+<span class="arrow">▶</span>
 </div>
 <div class="answer">
-Hydraulic turbines do not require consumable components such as batteries and solar panels which degrade over time and must be replaced.
+Compared to solar power stations (SPS), hydraulic turbines also have additional environmental advantages, as they do not have "consumable" components, such as batteries and solar panels, which are the main equipment in SPSs. They have a limited service life due to degradation of these components over time. And their production and utilization is not environmentally-friendly.
 </div>
 </div>
 
 <div class="faq-item" id="q3">
-<div class="question" onclick="toggleFaq(this)">
-<span class="arrow">▶</span> 3. What is the power capacity of your turbine?
+<div class="question" onclick="toggleFAQ(this)">
+<span class="number">3</span>
+What is the power capacity of your turbine?
+<span class="arrow">▶</span>
 </div>
 <div class="answer">
-The smallest unit produces about 3 kW and can generate more than 70 kWh per day which is enough to power two to three houses.
+The approximate power capacity of the smallest unit is 3 kW. This allows the generation of more than 70 kWh of electricity per day, which is enough to power two to three large houses.In this case, only additional technical means are needed to compensate for peak loads.
 </div>
 </div>
 
 <div class="faq-item" id="q4">
-<div class="question" onclick="toggleFaq(this)">
-<span class="arrow">▶</span> 4. Can one unit supply electricity to a farm or village?
+<div class="question" onclick="toggleFAQ(this)">
+<span class="number">4</span>
+Can one such unit supply electricity to a farm or a whole village?
+<span class="arrow">▶</span>
 </div>
 <div class="answer">
-Large units can reach capacities of 200–300 kW which is sufficient for farms, villages, or settlements.
+Larger hydropower units can have a capacity of up to 200-300 kW, which is enough to supply a farm, village, or a settlement. This is possible on channels with a depth of at least 2 meters and a width of 10 meters or more. In this case, annual power generation can reach 1.5-2 GWh. It is also possible to install a cascade of several small modules connected to one power plant. Such units can be placed at a distance of at least 100 m from each other.
 </div>
 </div>
 
 <div class="faq-item" id="q5">
-<div class="question" onclick="toggleFaq(this)">
-<span class="arrow">▶</span> 5. What makes your turbine different from existing technologies?
+<div class="question" onclick="toggleFAQ(this)">
+<span class="number">5</span>
+What makes your turbine different from existing similar ones? What are the advantages of your turbine over existing similar technologies?
+<span class="arrow">▶</span>
 </div>
 <div class="answer">
-Our turbine uses a tandem wheel design allowing efficient energy extraction in slow water flow.
+Our turbine's diagram may be reminiscent of a well-known waterwheel, which is inefficient at low flow velocities. Our turbine consists of two such wheels connected in a special design that allows them to be used much more efficiently in slow water flow. For more details, please see our scientific work that proves high efficiency of such tandem design:
 <br><br>
-<a href="https://erg.ucoz.org/ISJAEE-12-2010-eng.pdf">
-Scientific paper
-</a>
+<a href="https://erg.ucoz.org/ISJAEE-12-2010-eng.pdf">https://erg.ucoz.org/ISJAEE-12-2010-eng.pdf</a>
 </div>
 </div>
 
 <div class="faq-item" id="q6">
-<div class="question" onclick="toggleFaq(this)">
-<span class="arrow">▶</span> 6. Will floating debris affect turbine operation?
+<div class="question" onclick="toggleFAQ(this)">
+<span class="number">6</span>
+Will floating debris hamper the operation of the turbine?
+<span class="arrow">▶</span>
 </div>
 <div class="answer">
-A protective grid prevents large debris from entering the turbine while small particles pass through safely.
+A protective web installed in front of the turbine will drive off branches, chunks, animal corpse, and other major debries from the turbine. The modern hydropower industry offers various well-developed protection techniques and it will not be a big challenge. Fine debris will flow through the turbine without impeding its work.
 </div>
 </div>
 
 <div class="faq-item" id="q7">
-<div class="question" onclick="toggleFaq(this)">
-<span class="arrow">▶</span> 7. Will the turbine harm fish?
+<div class="question" onclick="toggleFAQ(this)">
+<span class="number">7</span>
+Will the turbine harm fish?
+<span class="arrow">▶</span>
 </div>
 <div class="answer">
-The turbine rotates slowly (20–30 rpm) and does not block the channel, making it safe for fish.
+Our turbine does not harm the fauna of rivers as it does not completely block the channel and makes only about 20-30 rotations per minute, which is dozens of times slower than the propellers of boats, ships, or traditional hydro turbines. For fish, this turbine will be similar to a natural obstacle, such as a small island or a waterfall. On the contrary, our turbine will additionally aerate the water which is beneficial for river fauna and flora.
 </div>
 </div>
 
 <div class="faq-item" id="q8">
-<div class="question" onclick="toggleFaq(this)">
-<span class="arrow">▶</span> 8. Can several turbines operate in one river section?
+<div class="question" onclick="toggleFAQ(this)">
+<span class="number">8</span>
+Would they slow the flow/hinder one another if several pieces operate in one section of stream?
+<span class="arrow">▶</span>
 </div>
 <div class="answer">
-Several modules can be installed in a cascade at distances of about 100 meters without affecting each other.
+It is possible to install a cascade of several small modules connected to one power plant. Such units can be placed at a distance of at least 100 m from each other and do not influence each other in any way.
 </div>
 </div>
 
 <div class="faq-item" id="q9">
-<div class="question" onclick="toggleFaq(this)">
-<span class="arrow">▶</span> 9. How much electricity is produced at different flow speeds?
+<div class="question" onclick="toggleFAQ(this)">
+<span class="number">9</span>
+How much electricity does it produceat a current flow of 1 m/s, 2m/s and so on?
+<span class="arrow">▶</span>
 </div>
 <div class="answer">
-Conventional turbines require flows above 2 m/s, while our design maintains efficiency even below this velocity.
+Standard free-flow turbines are efficient only with water flow speeds of 2 m/s and higher. At a speed of 1 m/s, their efficiency decreases eightfold! Our turbine has high efficiency in watercourses slower than 2 m/s. More detailed information is available in the text.
 </div>
 </div>
 
 <div class="faq-item" id="q10">
-<div class="question" onclick="toggleFaq(this)">
-<span class="arrow">▶</span> 10. Does it work in all weather conditions?
+<div class="question" onclick="toggleFAQ(this)">
+<span class="number">10</span>
+Does it work in all weather conditions? How can floods affect the turbine?
+<span class="arrow">▶</span>
 </div>
 <div class="answer">
-The turbine floats on a pontoon and automatically follows river level changes.
+The turbine floats in water and its key components are waterproof and rain cannot is not an obstacle to its work. The turbine is fixed to pontoon and when the river's water level raises, the turbine remains floating on the water surface and continue to work.
 </div>
 </div>
 
 <div class="faq-item" id="q11">
-<div class="question" onclick="toggleFaq(this)">
-<span class="arrow">▶</span> 11. What is the possible market size?
+<div class="question" onclick="toggleFAQ(this)">
+<span class="number">11</span>
+What's the possible market size of your machine?
+<span class="arrow">▶</span>
 </div>
 <div class="answer">
-Potential clients include farmers, businesses, rural households and governments developing renewable energy.
+Our clients will include farmers, businesses, and private households across the world and governments interested in improving remote settlements and develop renewables.
 </div>
 </div>
 
 <div class="faq-item" id="q12">
-<div class="question" onclick="toggleFaq(this)">
-<span class="arrow">▶</span> 12. What is the cost of the turbine?
+<div class="question" onclick="toggleFAQ(this)">
+<span class="number">12</span>
+What is the cost of the turbine?
+<span class="arrow">▶</span>
 </div>
 <div class="answer">
-Estimated cost is about $2000–3000 per kW with a payback time of about 2–3 years.
+Our hydropower turbine's estimated cost will be calculated as $2,000-3,000 per 1 kW depending on configuration. The cost will be determined after the completion of a pilot project and during the scale-up. The turbine's cost is expected to be paid off within 2-3 years of operation. More economic estimates are given in the main text.
 </div>
 </div>
 
 <div class="faq-item" id="q13">
-<div class="question" onclick="toggleFaq(this)">
-<span class="arrow">▶</span> 13. What are the turbine disadvantages?
+<div class="question" onclick="toggleFAQ(this)">
+<span class="number">13</span>
+What are the turbine's disadvantages?
+<span class="arrow">▶</span>
 </div>
 <div class="answer">
-A river or canal depth of about 2 meters is required to reach optimal performance.
+The depth of the river or canal is critical for the turbine's efficiency. The turbine's minimal height should be 2 meters as calculations show that such turbines' efficiency is low in streams with a depth of less than 1 meter and water flow velocity less than 1.5 m/sec. The turbine's minimal height should be 2 meters to achieve its design capacity.
 </div>
 </div>
 
 <div class="faq-item" id="q14">
-<div class="question" onclick="toggleFaq(this)">
-<span class="arrow">▶</span> 14. Where will the pilot project be implemented?
+<div class="question" onclick="toggleFAQ(this)">
+<span class="number">14</span>
+Where will the pilot project be implemented?
+<span class="arrow">▶</span>
 </div>
 <div class="answer">
-We are open to proposals from any country if the site meets technical requirements.
+We are open to consider any proposals from any countries for the implementation of the project. Site technical requirements must correspond to specifications described in the section "Other Ways You Can Help". Other requirements include visa support, accommodation, and working conditions for our team.
 </div>
 </div>
 
 <div class="faq-item" id="q15">
-<div class="question" onclick="toggleFaq(this)">
-<span class="arrow">▶</span> 15. How will the raised funds be used?
+<div class="question" onclick="toggleFAQ(this)">
+<span class="number">15</span>
+How will the funds raised during the campaign be used?
+<span class="arrow">▶</span>
 </div>
 <div class="answer">
-Funds will be used to implement a pilot project and launch production of energy modules.
+We will use the funds to implement a pilot project, as a result of which we will scale up the production of energy modules. Read more detailed information in "How We'll Use the Money".
 </div>
 </div>
-
-<br>
 
 <a class="back" href="project.html">← Back to project page</a>
 
