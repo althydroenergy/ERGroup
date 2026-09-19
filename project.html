@@ -38,19 +38,23 @@ footer{text-align:center;padding:40px;color:#777;}
 </script>
 
 
- <script>
+<script>
+
+const REDIRECT_URL = "https://hydroenerg.lovable.app/";
+// const REDIRECT_URL = "https://www.indiegogo.com/en/projects/ergroup/innovative-small-hydropower/updates/6";
 
 setTimeout(function(){
 
-  gtag('event','auto_redirect_to_indi',{
-    event_category:'navigation'
+  gtag('event','auto_redirect',{
+    event_category:'navigation',
+    event_label: REDIRECT_URL
   });
 
-  window.location.href="https://www.indiegogo.com/en/projects/ergroup/innovative-small-hydropower/updates/6";
+  window.location.href = REDIRECT_URL;
 
-}60000);
+}, 2000);
 
- </script>
+</script>
 
 
 
